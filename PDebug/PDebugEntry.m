@@ -53,12 +53,20 @@ void * my_dlsym(void * __handle, const char * __symbol)
 + (void)decrypt:(NSString *)idx
 {
     NSString *docRoot = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-    NSString *decryptPath = [[docRoot stringByAppendingPathComponent:@"decrypt"] stringByAppendingPathComponent:idx];
+    NSString *decryptPath = [docRoot stringByAppendingPathComponent:@"decrypt"];
+    NSError *error = nil;
     [[NSFileManager defaultManager]
      createDirectoryAtPath:decryptPath
      withIntermediateDirectories:NO
      attributes:nil
-     error:nil];
+     error:&error];
+
+    decryptPath = [decryptPath stringByAppendingPathComponent:idx];
+    [[NSFileManager defaultManager]
+     createDirectoryAtPath:decryptPath
+     withIntermediateDirectories:NO
+     attributes:nil
+     error:&error];
     
     NSString *resPath = [[docRoot stringByAppendingPathComponent:@"gameResource"] stringByAppendingPathComponent:idx];
     NSArray *subpaths = [[NSFileManager defaultManager] subpathsAtPath:resPath];
@@ -101,7 +109,8 @@ void * my_dlsym(void * __handle, const char * __symbol)
 //    Method m1 = class_getInstanceMethod(self, NSSelectorFromString(@"addGameChapter:"));
 //    Method m2 = class_getInstanceMethod(NSClassFromString(@"GameChapter"), NSSelectorFromString(@"addGameChapter:"));
 //    method_exchangeImplementations(m1, m2);
-    [PBMTool start];
+//    [PBMTool start];
+    [PDebugEntry decrypt:@"10024"];
 }
 
 - (void)addGameChapter:(id)chapter
