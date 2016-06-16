@@ -3,6 +3,7 @@
 "a0J-sH-T8g.title" = "社区";
 "wfa-eq-dWW.title" = "通知";
 "UNE-Fi-urc.title" = "我的";
+"7uA-qD-G1I.title" = "发现";
 
 //Class = "UINavigationItem"
 "dgx-n4-sO8.title" = "添加好友";
@@ -42,7 +43,7 @@
 
 //Class = "UILabel"
 "1Bg-8A-MAA.text" = "个人资料设定";
-"1sU-iM-UYK.text" = "手机号码";
+"50K-V8-h6z.text" = "手机号码";
 "4Ow-5F-74T.text" = "感谢";
 "7TC-oD-qtX.text" = "变更昵称";
 "AG1-wX-HeP.text" = "隐私政策";
@@ -64,7 +65,7 @@
 "Xzv-QR-kKy.text" = "放弃游戏";
 "bAT-6f-p87.text" = "清除缓存";
 "cEz-rH-v1T.text" = "退出登录";
-"cQw-I1-RBe.text" = "变更邮箱地址";
+"YZE-4H-Gk7.text" = "邮箱";
 "e31-mq-62p.text" = "头像";
 "faM-KJ-O8K.text" = "隐私政策";
 "g04-PM-EFN.text" = "卡路里";
@@ -139,6 +140,12 @@
 "xpy-Se-m6E.placeholder" = "标题";
 "cX7-GY-epA.placeholder" = "招募标题";
 "yg5-ai-1fL.placeholder" = "战队名（可选填）";
+"A9K-Dm-ZuS.placeholder" = "邮箱";
+"97W-bD-8Kv.placeholder" = "手机号码";
+"B6v-p3-3c0.placeholder" = "验证码";
+"Sje-E0-ncR.placeholder" = "密码";
+"7I5-ad-EtV.placeholder" = "手机号码";
+"XkC-Bh-Vce.placeholder" = "验证码";
 
 // Class = "UIBarButtonItem"
 "X7p-HJ-unB.title" = "确定";
