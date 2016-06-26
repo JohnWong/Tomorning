@@ -10,7 +10,6 @@
 #import <objc/runtime.h>
 #import <dlfcn.h>
 #import "fishhook.h"
-#import "PBMTool.h"
 
 static void * (*orig_dlsym)(void *, const char *);
 
@@ -93,58 +92,21 @@ void * my_dlsym(void * __handle, const char * __symbol)
 {
     orig_dlsym = dlsym(RTLD_DEFAULT, "dlsym");
     rebind_symbols((struct rebinding[1]){{"dlsym", my_dlsym}}, 1);
-    
     NSLog(@"PDebug injected.");
     
-//    Class c1 = NSClassFromString(@"CryptoCommon");
-//    Class c2 = NSClassFromString(@"_CryptoCommon");
-//    SEL sel = @selector(aesDecrypt:filename:);
-//    
-//    Method ori_Method = class_getClassMethod(c1, sel);
-//    Method my_Method = class_getClassMethod(c2, sel);
-//    method_exchangeImplementations(ori_Method, my_Method);
-//    [self decrypt];
+    //    Class c1 = NSClassFromString(@"CryptoCommon");
+    //    Class c2 = NSClassFromString(@"_CryptoCommon");
+    //    SEL sel = @selector(aesDecrypt:filename:);
+    //
+    //    Method ori_Method = class_getClassMethod(c1, sel);
+    //    Method my_Method = class_getClassMethod(c2, sel);
+    //    method_exchangeImplementations(ori_Method, my_Method);
+    //    [self decrypt];
     
-    
-//    Method m1 = class_getInstanceMethod(self, NSSelectorFromString(@"addGameChapter:"));
-//    Method m2 = class_getInstanceMethod(NSClassFromString(@"GameChapter"), NSSelectorFromString(@"addGameChapter:"));
-//    method_exchangeImplementations(m1, m2);
-//    [PBMTool start];
-    [PDebugEntry decrypt:@"10024"];
-}
 
-- (void)addGameChapter:(id)chapter
-{
-    
-}
-
-+ (NSDictionary *)result:(id)vc
-{
-    NSString *docRoot = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-    NSString *resPath = [[[docRoot stringByAppendingPathComponent:@"gameResource"]
-                         stringByAppendingPathComponent:@"103"]
-                         stringByAppendingPathComponent:@"jpg_24.jpg"];
-    
-    id model = [[NSClassFromString(@"GameChapterModel") alloc] init];
-    [model performSelector:@selector(setChapterTitle:) withObject:@"123"];
-    [model performSelector:@selector(setChapterIconPath:) withObject:resPath];
-    
-    NSDictionary *dict = @{
-                           @"chapter": @1,
-                           @"next": @2,
-                           @"point": @"{240, 320}",
-                           @"result": @213,
-                           @"model": model
-                           };
-    return dict;
-}
-
-+ (id)chapter
-{
-    id chapter = [[NSClassFromString(@"GameChapter") alloc] init];
-    [chapter performSelector:NSSelectorFromString(@"setChapterID:") withObject:@2];
-    [chapter performSelector:NSSelectorFromString(@"setPointIndex:") withObject:@3];
-    return chapter;
+    //    Method m1 = class_getInstanceMethod(self, NSSelectorFromString(@"addGameChapter:"));
+    //    Method m2 = class_getInstanceMethod(NSClassFromString(@"GameChapter"), NSSelectorFromString(@"addGameChapter:"));
+    //    method_exchangeImplementations(m1, m2);
 }
 
 @end

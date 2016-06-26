@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		0DACCC1538AAC0FC8DF40961 /* libPods-PDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C39590AFD961189D4682606 /* libPods-PDebug.a */; };
+		529DD5BB1D1D124B005C1798 /* WLGame.h in Headers */ = {isa = PBXBuildFile; fileRef = 529DD5B91D1D124B005C1798 /* WLGame.h */; };
+		529DD5BC1D1D124B005C1798 /* WLGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 529DD5BA1D1D124B005C1798 /* WLGame.m */; };
+		529DD5BF1D1D1409005C1798 /* WLConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 529DD5BD1D1D1409005C1798 /* WLConfig.h */; };
+		529DD5C01D1D1409005C1798 /* WLConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 529DD5BE1D1D1409005C1798 /* WLConfig.m */; };
+		529DD5D11D1D61FD005C1798 /* WLChapterController.h in Headers */ = {isa = PBXBuildFile; fileRef = 529DD5CF1D1D61FD005C1798 /* WLChapterController.h */; };
+		529DD5D21D1D61FD005C1798 /* WLChapterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529DD5D01D1D61FD005C1798 /* WLChapterController.m */; };
+		52D32E9C1D1D8C24001A4454 /* WLStepController.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D32E9A1D1D8C24001A4454 /* WLStepController.h */; };
+		52D32E9D1D1D8C24001A4454 /* WLStepController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D32E9B1D1D8C24001A4454 /* WLStepController.m */; };
+		52DAB1551D14DC8200F3A2B5 /* WonderlandHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 52DAB1531D14DC8200F3A2B5 /* WonderlandHelper.h */; };
+		52DAB1561D14DC8200F3A2B5 /* WonderlandHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DAB1541D14DC8200F3A2B5 /* WonderlandHelper.m */; };
+		52DAB15D1D14DD0900F3A2B5 /* UIApplication+IFM.h in Headers */ = {isa = PBXBuildFile; fileRef = 52DAB15B1D14DD0900F3A2B5 /* UIApplication+IFM.h */; };
+		52DAB15E1D14DD0900F3A2B5 /* UIApplication+IFM.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DAB15C1D14DD0900F3A2B5 /* UIApplication+IFM.m */; };
+		52DAB1611D14E03300F3A2B5 /* WLViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 52DAB15F1D14E03300F3A2B5 /* WLViewController.h */; };
+		52DAB1621D14E03300F3A2B5 /* WLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DAB1601D14E03300F3A2B5 /* WLViewController.m */; };
 		AAE19B6D1AB146DE006029B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE19B6C1AB146DE006029B9 /* main.m */; };
 		AAE19B701AB146DE006029B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE19B6F1AB146DE006029B9 /* AppDelegate.m */; };
 		AAE19B731AB146DE006029B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE19B721AB146DE006029B9 /* ViewController.m */; };
@@ -43,6 +57,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		529DD5B91D1D124B005C1798 /* WLGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLGame.h; sourceTree = "<group>"; };
+		529DD5BA1D1D124B005C1798 /* WLGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLGame.m; sourceTree = "<group>"; };
+		529DD5BD1D1D1409005C1798 /* WLConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLConfig.h; sourceTree = "<group>"; };
+		529DD5BE1D1D1409005C1798 /* WLConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLConfig.m; sourceTree = "<group>"; };
+		529DD5CF1D1D61FD005C1798 /* WLChapterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLChapterController.h; sourceTree = "<group>"; };
+		529DD5D01D1D61FD005C1798 /* WLChapterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLChapterController.m; sourceTree = "<group>"; };
+		52D32E9A1D1D8C24001A4454 /* WLStepController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLStepController.h; sourceTree = "<group>"; };
+		52D32E9B1D1D8C24001A4454 /* WLStepController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLStepController.m; sourceTree = "<group>"; };
+		52DAB1531D14DC8200F3A2B5 /* WonderlandHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WonderlandHelper.h; sourceTree = "<group>"; };
+		52DAB1541D14DC8200F3A2B5 /* WonderlandHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WonderlandHelper.m; sourceTree = "<group>"; };
+		52DAB15B1D14DD0900F3A2B5 /* UIApplication+IFM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+IFM.h"; sourceTree = "<group>"; };
+		52DAB15C1D14DD0900F3A2B5 /* UIApplication+IFM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+IFM.m"; sourceTree = "<group>"; };
+		52DAB15F1D14E03300F3A2B5 /* WLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLViewController.h; sourceTree = "<group>"; };
+		52DAB1601D14E03300F3A2B5 /* WLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLViewController.m; sourceTree = "<group>"; };
 		6A72B3649B6D43A6C6421950 /* Pods-PDebug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDebug.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PDebug/Pods-PDebug.debug.xcconfig"; sourceTree = "<group>"; };
 		6C39590AFD961189D4682606 /* libPods-PDebug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PDebug.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DC1A082B2E3281CFE11E123 /* Pods-PDebug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDebug.release.xcconfig"; path = "Pods/Target Support Files/Pods-PDebug/Pods-PDebug.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +171,20 @@
 				AAE19BDC1AB14C0F006029B9 /* PDebugEntry.h */,
 				AAE19BDB1AB14C0F006029B9 /* PDebugEntry.m */,
 				AAE19BBC1AB147E0006029B9 /* Supporting Files */,
+				52DAB1531D14DC8200F3A2B5 /* WonderlandHelper.h */,
+				52DAB1541D14DC8200F3A2B5 /* WonderlandHelper.m */,
+				52DAB15B1D14DD0900F3A2B5 /* UIApplication+IFM.h */,
+				52DAB15C1D14DD0900F3A2B5 /* UIApplication+IFM.m */,
+				52DAB15F1D14E03300F3A2B5 /* WLViewController.h */,
+				52DAB1601D14E03300F3A2B5 /* WLViewController.m */,
+				529DD5B91D1D124B005C1798 /* WLGame.h */,
+				529DD5BA1D1D124B005C1798 /* WLGame.m */,
+				529DD5BD1D1D1409005C1798 /* WLConfig.h */,
+				529DD5BE1D1D1409005C1798 /* WLConfig.m */,
+				529DD5CF1D1D61FD005C1798 /* WLChapterController.h */,
+				529DD5D01D1D61FD005C1798 /* WLChapterController.m */,
+				52D32E9A1D1D8C24001A4454 /* WLStepController.h */,
+				52D32E9B1D1D8C24001A4454 /* WLStepController.m */,
 			);
 			path = PDebug;
 			sourceTree = "<group>";
@@ -179,7 +221,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52DAB1611D14E03300F3A2B5 /* WLViewController.h in Headers */,
+				529DD5D11D1D61FD005C1798 /* WLChapterController.h in Headers */,
+				52DAB1551D14DC8200F3A2B5 /* WonderlandHelper.h in Headers */,
+				52D32E9C1D1D8C24001A4454 /* WLStepController.h in Headers */,
+				529DD5BF1D1D1409005C1798 /* WLConfig.h in Headers */,
 				AAE19BE01AB14C0F006029B9 /* PDebugEntry.h in Headers */,
+				529DD5BB1D1D124B005C1798 /* WLGame.h in Headers */,
+				52DAB15D1D14DD0900F3A2B5 /* UIApplication+IFM.h in Headers */,
 				AAE19BE21AB14C0F006029B9 /* fishhook.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,6 +286,7 @@
 				TargetAttributes = {
 					AAE19B661AB146DE006029B9 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = KC63T62SBR;
 					};
 					AAE19BB91AB147E0006029B9 = {
 						CreatedOnToolsVersion = 6.2;
@@ -335,8 +385,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52DAB1621D14E03300F3A2B5 /* WLViewController.m in Sources */,
 				AAE19BE11AB14C0F006029B9 /* fishhook.c in Sources */,
+				52DAB1561D14DC8200F3A2B5 /* WonderlandHelper.m in Sources */,
+				529DD5C01D1D1409005C1798 /* WLConfig.m in Sources */,
+				52D32E9D1D1D8C24001A4454 /* WLStepController.m in Sources */,
 				AAE19BDF1AB14C0F006029B9 /* PDebugEntry.m in Sources */,
+				529DD5BC1D1D124B005C1798 /* WLGame.m in Sources */,
+				529DD5D21D1D61FD005C1798 /* WLChapterController.m in Sources */,
+				52DAB15E1D14DD0900F3A2B5 /* UIApplication+IFM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Tomorning/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -465,6 +523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Tomorning/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
