@@ -53,7 +53,11 @@
         }
     }
     int gameId;
-    if ([currentVc isKindOfClass:NSClassFromString(@"WonderGameViewController")]) {
+    if ([currentVc isKindOfClass:NSClassFromString(@"WonderGameViewController")]
+        || [currentVc isKindOfClass:NSClassFromString(@"WonderDetailViewController")]
+        || [currentVc isKindOfClass:NSClassFromString(@"WonderChatViewController")]
+        || [currentVc isKindOfClass:NSClassFromString(@"WonderStatusViewController")]
+        || [currentVc isKindOfClass:NSClassFromString(@"WonderMoreViewController")]) {
         gameId = [[currentVc valueForKey:@"gameID"] intValue];
     }
     if (gameId > 0) {
