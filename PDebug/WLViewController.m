@@ -109,9 +109,10 @@
 
 - (void)setupBarItem
 {
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismiss)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(clear)];
-    
+    UIBarButtonItem *itemDismiss = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismiss)];
+    UIBarButtonItem *itemSearch = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search)];
+    self.navigationItem.rightBarButtonItems = @[ itemDismiss, itemSearch ];
 }
 
 - (void)clear
@@ -143,6 +144,11 @@
     WLStep *step = chapter.steps[indexPath.row];
     WLStepController *vc = [[WLStepController alloc] initWithStep:step];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)search
+{
+    
 }
 
 @end
