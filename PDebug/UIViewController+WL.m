@@ -1,0 +1,109 @@
+//
+//  UIViewController+WL.m
+//  Tomorning
+//
+//  Created by John Wong on 6/27/16.
+//  Copyright © 2016 com. All rights reserved.
+//
+
+#import "UIViewController+WL.h"
+#import <objc/runtime.h>
+#import <MapKit/MapKit.h>
+#import "WLConfig.h"
+
+@implementation UIViewController (WL)
+
++ (void)initialize
+{
+    if (self == NSClassFromString(@"TreasureMapViewController")) {
+        [self exchangeSelector:@selector(mapView:viewForAnnotation:) with:@selector(WL_mapView:viewForAnnotation:)];
+        [self exchangeSelector:@selector(viewDidLoad) with:@selector(TM_viewDidLoad)];
+    } else if (self == NSClassFromString(@"WonderGameViewController")) {
+        [self exchangeSelector:@selector(viewDidLoad) with:@selector(WG_viewDidLoad)];
+    } else if (self == NSClassFromString(@"FeaturedTableViewController")) {
+        [self exchangeSelector:@selector(viewDidLoad) with:@selector(TB_viewDidLoad)];
+    } else if (self == NSClassFromString(@"FeaturedDetailViewController")) {
+        [self exchangeSelector:@selector(viewDidLoad) with:@selector(FD_viewDidLoad)];
+    }
+}
+
++ (void)exchangeSelector:(SEL)s1 with:(SEL)s2
+{
+    Method m1 = class_getInstanceMethod(self, s1);
+    Method m2 = class_getInstanceMethod(self, s2);
+    method_exchangeImplementations(m1, m2);
+}
+
+- (void)TM_viewDidLoad
+{
+    [self TM_viewDidLoad];
+    [self setValue:@(YES) forKeyPath:@"mapView.showsUserLocation"];
+}
+
+- (void)WG_viewDidLoad
+{
+    [self WG_viewDidLoad];
+    UIBarButtonItem *rightItem = self.navigationItem.rightBarButtonItem;
+    UIBarButtonItem *hint = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(showHint)];
+    self.navigationItem.rightBarButtonItems = @[ rightItem, hint ];
+    
+    dispatch_after(3, dispatch_get_main_queue(), ^{
+        if ([WLConfig sharedInstance].isAutoMode) {
+            for (UIView *view in self.view.subviews) {
+                if ([view isKindOfClass:[UIScrollView class]]) {
+                    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+                    ((UIScrollView *)view).contentOffset = CGPointMake(width, 0);
+                    dispatch_after(3, dispatch_get_main_queue(), ^{
+//                        [self performSelector:@selector(takePhoto:)];
+                    });
+                }
+            }
+        }
+    });
+}
+
+- (void)TB_viewDidLoad
+{
+    [self TB_viewDidLoad];
+    UIBarButtonItem *rightItem = self.navigationItem.rightBarButtonItem;
+    UIBarButtonItem *hint = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(autoPlay)];
+    self.navigationItem.rightBarButtonItems = @[ rightItem, hint ];
+}
+
+- (void)FD_viewDidLoad
+{
+    [self FD_viewDidLoad];
+    if ([WLConfig sharedInstance].isAutoMode) {
+        [self performSelector:@selector(tapBottomButton:) withObject:nil];
+    }
+}
+
+- (void)showHint
+{
+    [[UIApplication sharedApplication] performSelector:@selector(showHelper)];
+}
+
+- (void)autoPlay
+{
+    [WLConfig sharedInstance].isAutoMode = YES;
+    SEL sel = @selector(toFeaturedDetailWithGameID:type:);
+    NSMethodSignature *signature = [self.class instanceMethodSignatureForSelector:sel];
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+    invocation.selector = sel;
+    invocation.target = self;
+    NSNumber *gameId = @(122);
+    int type = 0;
+    [invocation setArgument:&gameId atIndex:2];
+    [invocation setArgument:&type atIndex:3];
+    [invocation invoke];
+}
+
+- (nullable MKAnnotationView *)WL_mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:MKUserLocation.class]) {
+        return nil;
+    }
+    return [self WL_mapView:mapView viewForAnnotation:annotation];
+}
+
+@end

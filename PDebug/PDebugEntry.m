@@ -10,6 +10,9 @@
 #import <objc/runtime.h>
 #import <dlfcn.h>
 #import "fishhook.h"
+#import "CTBlockDescription.h"
+#import "CTObjectiveCRuntimeAdditions.h"
+#import "WLConfig.h"
 
 static void * (*orig_dlsym)(void *, const char *);
 
@@ -27,63 +30,50 @@ void * my_dlsym(void * __handle, const char * __symbol)
     return orig_dlsym(__handle, __symbol);
 }
 
-@interface _CryptoCommon: NSObject
-
-@end
-
-@implementation _CryptoCommon
-
-+ (id)aesDecrypt:(id)arg0 filename:(id)arg1
-{
-    NSData *result = [_CryptoCommon aesDecrypt:arg0 filename:arg1];
-    
-    NSString *str = [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];
-    NSLog(@"%@ %@", arg0, arg1);
-    NSLog(@"%@", result);
-    NSLog(@"%@", str);
-    return result;
-}
-
-@end
-
+typedef void(^WLScanResult)(NSDictionary *dict, bool b, long l);
 
 @implementation PDebugEntry
 
-+ (void)decrypt:(NSString *)idx
+- (void)WL_scanTagWithImageData:(id)data withResult:(WLScanResult)result
 {
-    NSString *docRoot = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-    NSString *decryptPath = [docRoot stringByAppendingPathComponent:@"decrypt"];
-    NSError *error = nil;
-    [[NSFileManager defaultManager]
-     createDirectoryAtPath:decryptPath
-     withIntermediateDirectories:NO
-     attributes:nil
-     error:&error];
-
-    decryptPath = [decryptPath stringByAppendingPathComponent:idx];
-    [[NSFileManager defaultManager]
-     createDirectoryAtPath:decryptPath
-     withIntermediateDirectories:NO
-     attributes:nil
-     error:&error];
+    CTBlockDescription *blockDescription = [[CTBlockDescription alloc] initWithBlock:result];
     
-    NSString *resPath = [[docRoot stringByAppendingPathComponent:@"gameResource"] stringByAppendingPathComponent:idx];
-    NSArray *subpaths = [[NSFileManager defaultManager] subpathsAtPath:resPath];
-    for (NSString *path in subpaths) {
-        [self decrypt:[resPath stringByAppendingPathComponent:path] toPath:decryptPath];
-    }
+    // getting a method signature for this block
+    NSMethodSignature *methodSignature = blockDescription.blockSignature;
+    NSLog(@"%@", methodSignature);
+    
+    __block WLScanResult resultBlock = [result copy];
+    WLScanResult block = ^(NSDictionary *dict, bool b, long l) {
+        if (b) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSData *scanData = [WLConfig sharedInstance].lastScanData;
+                int gameId = [WLConfig currentGameId];
+                if (scanData.length > 0 && gameId > 0) {
+                    NSString *filePath = [WLConfig decryptedPath];
+                    filePath = [filePath stringByAppendingPathComponent:@"scan"];
+                    NSError *error;
+                    [[NSFileManager defaultManager] createDirectoryAtPath:filePath
+                                              withIntermediateDirectories:NO
+                                                               attributes:nil
+                                                                    error:&error];
+                    
+                    filePath = [filePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@", @(gameId)]];
+                    [[NSFileManager defaultManager] createDirectoryAtPath:filePath
+                                              withIntermediateDirectories:NO
+                                                               attributes:nil
+                                                                    error:&error];
+                    
+                    filePath = [filePath stringByAppendingPathComponent:[NSString stringWithFormat:@"chap_%@.jpg", dict[@"chapter"]]];
+                    [scanData writeToFile:filePath atomically:YES];
+                }
+            });
+        }
+        resultBlock(dict, b, l);
+    };
+    [self WL_scanTagWithImageData:data withResult:block];
 }
 
-+ (void)decrypt:(NSString *)filePath toPath:(NSString *)toPath
-{
-    NSData *data = [NSData dataWithContentsOfFile:filePath];
-    NSString *fileName = [filePath lastPathComponent];
-    Class cls = NSClassFromString(@"CryptoCommon");
-    NSData *result = [cls performSelector:@selector(aesDecrypt:filename:) withObject:data withObject:fileName];
-    [result writeToFile:[toPath stringByAppendingPathComponent:fileName] atomically:YES];
-}
-
-- (void)scanSuccessWithInfo:(id)treasures
+- (void)toFeaturedDetailWithGameID:(id)gameId type:(int)type
 {
     
 }
@@ -94,19 +84,23 @@ void * my_dlsym(void * __handle, const char * __symbol)
     rebind_symbols((struct rebinding[1]){{"dlsym", my_dlsym}}, 1);
     NSLog(@"PDebug injected.");
     
-    //    Class c1 = NSClassFromString(@"CryptoCommon");
-    //    Class c2 = NSClassFromString(@"_CryptoCommon");
-    //    SEL sel = @selector(aesDecrypt:filename:);
-    //
-    //    Method ori_Method = class_getClassMethod(c1, sel);
-    //    Method my_Method = class_getClassMethod(c2, sel);
-    //    method_exchangeImplementations(ori_Method, my_Method);
-    //    [self decrypt];
+    {
+        Class c = NSClassFromString(@"WonderTreasureHelper");
+        SEL originalSelector = NSSelectorFromString(@"scanTagWithImageData:withResult:");
+        SEL swizzledSelector = @selector(WL_scanTagWithImageData:withResult:);
+        Method m = class_getInstanceMethod(self, swizzledSelector);
+        class_addMethod(c, swizzledSelector, method_getImplementation(m), method_getTypeEncoding(m));
+        
+        class_swizzleSelector(c, originalSelector, swizzledSelector);
+    }
+    {
+        Class c = NSClassFromString(@"FeaturedTableViewController");
+        SEL sel = @selector(toFeaturedDetailWithGameID:type:);
+        Method m1 = class_getInstanceMethod(self, sel);
+        Method m2 = class_getInstanceMethod(c, sel);
+//        method_exchangeImplementations(m1, m2);
+    }
     
-
-    //    Method m1 = class_getInstanceMethod(self, NSSelectorFromString(@"addGameChapter:"));
-    //    Method m2 = class_getInstanceMethod(NSClassFromString(@"GameChapter"), NSSelectorFromString(@"addGameChapter:"));
-    //    method_exchangeImplementations(m1, m2);
 }
 
 @end

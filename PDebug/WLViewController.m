@@ -17,9 +17,14 @@
 
 @end
 
+@interface WLViewController () <UISearchBarDelegate, UISearchResultsUpdating>
+
+@end
+
 @implementation WLViewController
 {
     WLGame *_game;
+    UISearchController *_searchController;
 }
 
 - (instancetype)initWithGameId:(int)gameId
@@ -46,26 +51,34 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 80;
+    WLChapter *chapter = _game.chapters[section];
+    if (chapter.filteredSteps && chapter.filteredSteps.count == 0) {
+        return 0;
+    } else {
+        return 80;
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     WLChapter *chapter = _game.chapters[section];
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 80)];
-    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(16, 8, view.bounds.size.height - 16, view.bounds.size.height - 16)];
-    image.image = [UIImage imageWithContentsOfFile:chapter.pic];
-    [view addSubview:image];
-    NSString *message = [NSString stringWithFormat:@"%@ %@ %@", @(chapter.index), chapter.title, chapter.englishTitle];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(image.frame) + 8, 0, view.bounds.size.width - CGRectGetMaxX(image.frame) - 16, view.bounds.size.height)];
-    label.text = message;
-    view.backgroundColor = [UIColor lightGrayColor];
-    [view addSubview:label];
-    view.tag = section;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectChapter:)];
-    [view addGestureRecognizer:tap];
-    
-    return view;
+    if (chapter.filteredSteps && chapter.filteredSteps.count == 0) {
+        return [[UIView alloc] initWithFrame:CGRectZero];
+    } else {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 80)];
+        UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(16, 8, view.bounds.size.height - 16, view.bounds.size.height - 16)];
+        image.image = [UIImage imageWithContentsOfFile:chapter.pic];
+        [view addSubview:image];
+        NSString *message = [NSString stringWithFormat:@"%@ %@ %@", @(chapter.index), chapter.title, chapter.englishTitle];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(image.frame) + 8, 0, view.bounds.size.width - CGRectGetMaxX(image.frame) - 16, view.bounds.size.height)];
+        label.text = message;
+        view.backgroundColor = [UIColor lightGrayColor];
+        [view addSubview:label];
+        view.tag = section;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectChapter:)];
+        [view addGestureRecognizer:tap];
+        return view;
+    }
 }
 
 - (void)selectChapter:(UITapGestureRecognizer *)tap
@@ -81,7 +94,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     WLChapter *chapter = _game.chapters[indexPath.section];
-    WLStep *step = chapter.steps[indexPath.row];
+    WLStep *step = (chapter.filteredSteps ? : chapter.steps)[indexPath.row];
     NSString *message = [NSString stringWithFormat:@"%@ %@", @(step.index), step.content];
     cell.textLabel.text = message;
     return cell;
@@ -95,7 +108,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     WLChapter *chapter = _game.chapters[section];
-    return chapter.steps.count;
+    return (chapter.filteredSteps ? : chapter.steps).count;
 }
 
 - (void)viewDidLoad {
@@ -105,14 +118,20 @@
     [self setupBarItem];
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"Cell"];
     
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    _searchController.searchResultsUpdater = self;
+    _searchController.dimsBackgroundDuringPresentation = NO;
+    _searchController.searchBar.delegate = self;
+    self.tableView.tableHeaderView = _searchController.searchBar;;
+    self.definesPresentationContext = YES;
+    
 }
 
 - (void)setupBarItem
 {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(clear)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(clear)];
     UIBarButtonItem *itemDismiss = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismiss)];
-    UIBarButtonItem *itemSearch = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search)];
-    self.navigationItem.rightBarButtonItems = @[ itemDismiss, itemSearch ];
+    self.navigationItem.rightBarButtonItem = itemDismiss;
 }
 
 - (void)clear
@@ -146,9 +165,26 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)search
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController
 {
-    
+    NSString *query = searchController.searchBar.text;
+    if (query.length > 0) {
+        for (WLChapter *chapter in _game.chapters) {
+            NSMutableArray<WLStep *> *filterdSteps = [NSMutableArray array];
+            for (WLStep *step in chapter.steps) {
+                if ([step.title rangeOfString:query].location != NSNotFound ||
+                    [step.content rangeOfString:query].location != NSNotFound) {
+                    [filterdSteps addObject:step];
+                }
+                chapter.filteredSteps = filterdSteps;
+            }
+        }
+    } else {
+        for (WLChapter *chapter in _game.chapters) {
+            chapter.filteredSteps = nil;
+        }
+    }
+    [self.tableView reloadData];
 }
 
 @end

@@ -13,4 +13,10 @@
 + (NSString *)decryptedPath;
 + (NSString *)gameResourcePath;
 
++ (instancetype)sharedInstance;
+
++ (int)currentGameId;
+
+@property (nonatomic, strong) NSData *lastScanData;
+@property (nonatomic, assign) BOOL isAutoMode;
 @end

@@ -23,6 +23,7 @@
      error:&error];
     if (error) {
         NSLog(@"%@: %d %@", self.class, __LINE__, error);
+        return;
     }
     
     NSString *resPath = [[WLConfig gameResourcePath] stringByAppendingPathComponent:idx];

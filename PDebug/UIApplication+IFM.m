@@ -9,6 +9,7 @@
 #import "UIApplication+IFM.h"
 #import "WLViewController.h"
 #import <objc/runtime.h>
+#import "WLConfig.h"
 
 @implementation UIApplication (IFM)
 
@@ -39,27 +40,7 @@
         return;
     }
     
-    
-    UIViewController *currentVc = [UIApplication sharedApplication].keyWindow.rootViewController;
-    while (currentVc) {
-        if (currentVc.presentedViewController) {
-            currentVc = currentVc.presentedViewController;
-        } else if ([currentVc isKindOfClass:[UITabBarController class]]) {
-            currentVc = ((UITabBarController *)currentVc).selectedViewController;
-        } else if ([currentVc isKindOfClass:[UINavigationController class]]) {
-            currentVc = ((UINavigationController *)currentVc).topViewController;
-        } else {
-            break;
-        }
-    }
-    int gameId;
-    if ([currentVc isKindOfClass:NSClassFromString(@"WonderGameViewController")]
-        || [currentVc isKindOfClass:NSClassFromString(@"WonderDetailViewController")]
-        || [currentVc isKindOfClass:NSClassFromString(@"WonderChatViewController")]
-        || [currentVc isKindOfClass:NSClassFromString(@"WonderStatusViewController")]
-        || [currentVc isKindOfClass:NSClassFromString(@"WonderMoreViewController")]) {
-        gameId = [[currentVc valueForKey:@"gameID"] intValue];
-    }
+    int gameId = [WLConfig currentGameId];
     if (gameId > 0) {
         UIViewController *vc = [[WLViewController alloc] initWithGameId:gameId];
         UIViewController *navVc = [[WLNavigationController alloc] initWithRootViewController:vc];

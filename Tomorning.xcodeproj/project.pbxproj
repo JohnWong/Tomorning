@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		0DACCC1538AAC0FC8DF40961 /* libPods-PDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C39590AFD961189D4682606 /* libPods-PDebug.a */; };
+		521E6EC31D20371E008A3280 /* UIViewController+WL.h in Headers */ = {isa = PBXBuildFile; fileRef = 521E6EC11D20371E008A3280 /* UIViewController+WL.h */; };
+		521E6EC41D20371E008A3280 /* UIViewController+WL.m in Sources */ = {isa = PBXBuildFile; fileRef = 521E6EC21D20371E008A3280 /* UIViewController+WL.m */; };
+		522E35951D31362C001581A2 /* AVCaptureStillImageOutput+WL.h in Headers */ = {isa = PBXBuildFile; fileRef = 522E35931D31362C001581A2 /* AVCaptureStillImageOutput+WL.h */; };
+		522E35961D31362C001581A2 /* AVCaptureStillImageOutput+WL.m in Sources */ = {isa = PBXBuildFile; fileRef = 522E35941D31362C001581A2 /* AVCaptureStillImageOutput+WL.m */; };
+		522E359D1D315970001581A2 /* CTBlockDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 522E35981D315970001581A2 /* CTBlockDescription.h */; };
+		522E359E1D315970001581A2 /* CTBlockDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 522E35991D315970001581A2 /* CTBlockDescription.m */; };
+		522E359F1D315970001581A2 /* CTObjectiveCRuntimeAdditions-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 522E359A1D315970001581A2 /* CTObjectiveCRuntimeAdditions-Prefix.pch */; };
+		522E35A01D315970001581A2 /* CTObjectiveCRuntimeAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 522E359B1D315970001581A2 /* CTObjectiveCRuntimeAdditions.h */; };
+		522E35A11D315970001581A2 /* CTObjectiveCRuntimeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 522E359C1D315970001581A2 /* CTObjectiveCRuntimeAdditions.m */; };
 		529DD5BB1D1D124B005C1798 /* WLGame.h in Headers */ = {isa = PBXBuildFile; fileRef = 529DD5B91D1D124B005C1798 /* WLGame.h */; };
 		529DD5BC1D1D124B005C1798 /* WLGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 529DD5BA1D1D124B005C1798 /* WLGame.m */; };
 		529DD5BF1D1D1409005C1798 /* WLConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 529DD5BD1D1D1409005C1798 /* WLConfig.h */; };
@@ -57,6 +66,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		521E6EC11D20371E008A3280 /* UIViewController+WL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WL.h"; sourceTree = "<group>"; };
+		521E6EC21D20371E008A3280 /* UIViewController+WL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+WL.m"; sourceTree = "<group>"; };
+		522E35931D31362C001581A2 /* AVCaptureStillImageOutput+WL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVCaptureStillImageOutput+WL.h"; sourceTree = "<group>"; };
+		522E35941D31362C001581A2 /* AVCaptureStillImageOutput+WL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVCaptureStillImageOutput+WL.m"; sourceTree = "<group>"; };
+		522E35981D315970001581A2 /* CTBlockDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBlockDescription.h; sourceTree = "<group>"; };
+		522E35991D315970001581A2 /* CTBlockDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTBlockDescription.m; sourceTree = "<group>"; };
+		522E359A1D315970001581A2 /* CTObjectiveCRuntimeAdditions-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTObjectiveCRuntimeAdditions-Prefix.pch"; sourceTree = "<group>"; };
+		522E359B1D315970001581A2 /* CTObjectiveCRuntimeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTObjectiveCRuntimeAdditions.h; sourceTree = "<group>"; };
+		522E359C1D315970001581A2 /* CTObjectiveCRuntimeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTObjectiveCRuntimeAdditions.m; sourceTree = "<group>"; };
 		529DD5B91D1D124B005C1798 /* WLGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLGame.h; sourceTree = "<group>"; };
 		529DD5BA1D1D124B005C1798 /* WLGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLGame.m; sourceTree = "<group>"; };
 		529DD5BD1D1D1409005C1798 /* WLConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLConfig.h; sourceTree = "<group>"; };
@@ -120,6 +138,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		522E35971D315970001581A2 /* CTObjectiveCRuntimeAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				522E35981D315970001581A2 /* CTBlockDescription.h */,
+				522E35991D315970001581A2 /* CTBlockDescription.m */,
+				522E359A1D315970001581A2 /* CTObjectiveCRuntimeAdditions-Prefix.pch */,
+				522E359B1D315970001581A2 /* CTObjectiveCRuntimeAdditions.h */,
+				522E359C1D315970001581A2 /* CTObjectiveCRuntimeAdditions.m */,
+			);
+			path = CTObjectiveCRuntimeAdditions;
+			sourceTree = "<group>";
+		};
 		AAE19B5E1AB146DE006029B9 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +197,7 @@
 		AAE19BBB1AB147E0006029B9 /* PDebug */ = {
 			isa = PBXGroup;
 			children = (
+				522E35971D315970001581A2 /* CTObjectiveCRuntimeAdditions */,
 				AAE19BE31AB14C1D006029B9 /* Libs */,
 				AAE19BDC1AB14C0F006029B9 /* PDebugEntry.h */,
 				AAE19BDB1AB14C0F006029B9 /* PDebugEntry.m */,
@@ -185,6 +216,10 @@
 				529DD5D01D1D61FD005C1798 /* WLChapterController.m */,
 				52D32E9A1D1D8C24001A4454 /* WLStepController.h */,
 				52D32E9B1D1D8C24001A4454 /* WLStepController.m */,
+				521E6EC11D20371E008A3280 /* UIViewController+WL.h */,
+				521E6EC21D20371E008A3280 /* UIViewController+WL.m */,
+				522E35931D31362C001581A2 /* AVCaptureStillImageOutput+WL.h */,
+				522E35941D31362C001581A2 /* AVCaptureStillImageOutput+WL.m */,
 			);
 			path = PDebug;
 			sourceTree = "<group>";
@@ -221,14 +256,19 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				522E359D1D315970001581A2 /* CTBlockDescription.h in Headers */,
 				52DAB1611D14E03300F3A2B5 /* WLViewController.h in Headers */,
+				522E35A01D315970001581A2 /* CTObjectiveCRuntimeAdditions.h in Headers */,
 				529DD5D11D1D61FD005C1798 /* WLChapterController.h in Headers */,
 				52DAB1551D14DC8200F3A2B5 /* WonderlandHelper.h in Headers */,
 				52D32E9C1D1D8C24001A4454 /* WLStepController.h in Headers */,
 				529DD5BF1D1D1409005C1798 /* WLConfig.h in Headers */,
+				522E35951D31362C001581A2 /* AVCaptureStillImageOutput+WL.h in Headers */,
+				522E359F1D315970001581A2 /* CTObjectiveCRuntimeAdditions-Prefix.pch in Headers */,
 				AAE19BE01AB14C0F006029B9 /* PDebugEntry.h in Headers */,
 				529DD5BB1D1D124B005C1798 /* WLGame.h in Headers */,
 				52DAB15D1D14DD0900F3A2B5 /* UIApplication+IFM.h in Headers */,
+				521E6EC31D20371E008A3280 /* UIViewController+WL.h in Headers */,
 				AAE19BE21AB14C0F006029B9 /* fishhook.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,9 +425,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				522E35A11D315970001581A2 /* CTObjectiveCRuntimeAdditions.m in Sources */,
 				52DAB1621D14E03300F3A2B5 /* WLViewController.m in Sources */,
+				522E359E1D315970001581A2 /* CTBlockDescription.m in Sources */,
 				AAE19BE11AB14C0F006029B9 /* fishhook.c in Sources */,
 				52DAB1561D14DC8200F3A2B5 /* WonderlandHelper.m in Sources */,
+				521E6EC41D20371E008A3280 /* UIViewController+WL.m in Sources */,
+				522E35961D31362C001581A2 /* AVCaptureStillImageOutput+WL.m in Sources */,
 				529DD5C01D1D1409005C1798 /* WLConfig.m in Sources */,
 				52D32E9D1D1D8C24001A4454 /* WLStepController.m in Sources */,
 				AAE19BDF1AB14C0F006029B9 /* PDebugEntry.m in Sources */,

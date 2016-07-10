@@ -34,6 +34,7 @@
 @property (nonatomic, strong) NSString *englishTitle;
 @property (nonatomic, strong) NSString *pic;
 @property (nonatomic, copy) NSArray<WLStep *> *steps;
+@property (nonatomic, copy) NSArray<WLStep *> *filteredSteps;
 @property (nonatomic, strong) NSDictionary *raw;
 @property (nonatomic, assign) double latitude;
 @property (nonatomic, assign) double longitude;
@@ -45,6 +46,7 @@
 
 @property (nonatomic, readonly) int gameId;
 @property (nonatomic, strong) NSArray<WLChapter *> *chapters;
+
 - (instancetype)initWithGameId:(int)gameId;
 
 @end
