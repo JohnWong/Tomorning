@@ -23,6 +23,11 @@
 		529DD5C01D1D1409005C1798 /* WLConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 529DD5BE1D1D1409005C1798 /* WLConfig.m */; };
 		529DD5D11D1D61FD005C1798 /* WLChapterController.h in Headers */ = {isa = PBXBuildFile; fileRef = 529DD5CF1D1D61FD005C1798 /* WLChapterController.h */; };
 		529DD5D21D1D61FD005C1798 /* WLChapterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529DD5D01D1D61FD005C1798 /* WLChapterController.m */; };
+		52ADD64C1D50D9BB00980CBE /* CLLocation+FLFake.h in Headers */ = {isa = PBXBuildFile; fileRef = 52ADD6471D50D9BB00980CBE /* CLLocation+FLFake.h */; };
+		52ADD64D1D50D9BB00980CBE /* CLLocation+FLFake.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ADD6481D50D9BB00980CBE /* CLLocation+FLFake.m */; };
+		52ADD64E1D50D9BB00980CBE /* FKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ADD6491D50D9BB00980CBE /* FKViewController.m */; };
+		52ADD64F1D50D9BB00980CBE /* FLFakeConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 52ADD64A1D50D9BB00980CBE /* FLFakeConfig.h */; };
+		52ADD6501D50D9BB00980CBE /* FLFakeConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ADD64B1D50D9BB00980CBE /* FLFakeConfig.m */; };
 		52D32E9C1D1D8C24001A4454 /* WLStepController.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D32E9A1D1D8C24001A4454 /* WLStepController.h */; };
 		52D32E9D1D1D8C24001A4454 /* WLStepController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D32E9B1D1D8C24001A4454 /* WLStepController.m */; };
 		52DAB1551D14DC8200F3A2B5 /* WonderlandHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 52DAB1531D14DC8200F3A2B5 /* WonderlandHelper.h */; };
@@ -81,6 +86,11 @@
 		529DD5BE1D1D1409005C1798 /* WLConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLConfig.m; sourceTree = "<group>"; };
 		529DD5CF1D1D61FD005C1798 /* WLChapterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLChapterController.h; sourceTree = "<group>"; };
 		529DD5D01D1D61FD005C1798 /* WLChapterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLChapterController.m; sourceTree = "<group>"; };
+		52ADD6471D50D9BB00980CBE /* CLLocation+FLFake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+FLFake.h"; sourceTree = "<group>"; };
+		52ADD6481D50D9BB00980CBE /* CLLocation+FLFake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+FLFake.m"; sourceTree = "<group>"; };
+		52ADD6491D50D9BB00980CBE /* FKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKViewController.m; sourceTree = "<group>"; };
+		52ADD64A1D50D9BB00980CBE /* FLFakeConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLFakeConfig.h; sourceTree = "<group>"; };
+		52ADD64B1D50D9BB00980CBE /* FLFakeConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLFakeConfig.m; sourceTree = "<group>"; };
 		52D32E9A1D1D8C24001A4454 /* WLStepController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLStepController.h; sourceTree = "<group>"; };
 		52D32E9B1D1D8C24001A4454 /* WLStepController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLStepController.m; sourceTree = "<group>"; };
 		52DAB1531D14DC8200F3A2B5 /* WonderlandHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WonderlandHelper.h; sourceTree = "<group>"; };
@@ -197,6 +207,11 @@
 		AAE19BBB1AB147E0006029B9 /* PDebug */ = {
 			isa = PBXGroup;
 			children = (
+				52ADD6471D50D9BB00980CBE /* CLLocation+FLFake.h */,
+				52ADD6481D50D9BB00980CBE /* CLLocation+FLFake.m */,
+				52ADD6491D50D9BB00980CBE /* FKViewController.m */,
+				52ADD64A1D50D9BB00980CBE /* FLFakeConfig.h */,
+				52ADD64B1D50D9BB00980CBE /* FLFakeConfig.m */,
 				522E35971D315970001581A2 /* CTObjectiveCRuntimeAdditions */,
 				AAE19BE31AB14C1D006029B9 /* Libs */,
 				AAE19BDC1AB14C0F006029B9 /* PDebugEntry.h */,
@@ -259,10 +274,12 @@
 				522E359D1D315970001581A2 /* CTBlockDescription.h in Headers */,
 				52DAB1611D14E03300F3A2B5 /* WLViewController.h in Headers */,
 				522E35A01D315970001581A2 /* CTObjectiveCRuntimeAdditions.h in Headers */,
+				52ADD64F1D50D9BB00980CBE /* FLFakeConfig.h in Headers */,
 				529DD5D11D1D61FD005C1798 /* WLChapterController.h in Headers */,
 				52DAB1551D14DC8200F3A2B5 /* WonderlandHelper.h in Headers */,
 				52D32E9C1D1D8C24001A4454 /* WLStepController.h in Headers */,
 				529DD5BF1D1D1409005C1798 /* WLConfig.h in Headers */,
+				52ADD64C1D50D9BB00980CBE /* CLLocation+FLFake.h in Headers */,
 				522E35951D31362C001581A2 /* AVCaptureStillImageOutput+WL.h in Headers */,
 				522E359F1D315970001581A2 /* CTObjectiveCRuntimeAdditions-Prefix.pch in Headers */,
 				AAE19BE01AB14C0F006029B9 /* PDebugEntry.h in Headers */,
@@ -425,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52ADD64D1D50D9BB00980CBE /* CLLocation+FLFake.m in Sources */,
 				522E35A11D315970001581A2 /* CTObjectiveCRuntimeAdditions.m in Sources */,
 				52DAB1621D14E03300F3A2B5 /* WLViewController.m in Sources */,
 				522E359E1D315970001581A2 /* CTBlockDescription.m in Sources */,
@@ -432,12 +450,14 @@
 				52DAB1561D14DC8200F3A2B5 /* WonderlandHelper.m in Sources */,
 				521E6EC41D20371E008A3280 /* UIViewController+WL.m in Sources */,
 				522E35961D31362C001581A2 /* AVCaptureStillImageOutput+WL.m in Sources */,
+				52ADD6501D50D9BB00980CBE /* FLFakeConfig.m in Sources */,
 				529DD5C01D1D1409005C1798 /* WLConfig.m in Sources */,
 				52D32E9D1D1D8C24001A4454 /* WLStepController.m in Sources */,
 				AAE19BDF1AB14C0F006029B9 /* PDebugEntry.m in Sources */,
 				529DD5BC1D1D124B005C1798 /* WLGame.m in Sources */,
 				529DD5D21D1D61FD005C1798 /* WLChapterController.m in Sources */,
 				52DAB15E1D14DD0900F3A2B5 /* UIApplication+IFM.m in Sources */,
+				52ADD64E1D50D9BB00980CBE /* FKViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +580,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.tomorning.wonderland.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -574,6 +595,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.tomorning.wonderland.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

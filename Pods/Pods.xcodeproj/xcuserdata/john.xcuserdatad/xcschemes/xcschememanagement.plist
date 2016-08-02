@@ -4,40 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>FMDB.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>PleaseBaoMe.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
 		<key>Pods-PDebug.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UIViewAdditions.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>152BA9BDE342EC24C827BA2FA6B74F2A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>62C9B2C0F3BBA2C8DB127D3F91BEE00A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9301BF6A3808E13F323AB4CED4BD2039</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9F12FB4A63E20F601CFB2E64A65B57C1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

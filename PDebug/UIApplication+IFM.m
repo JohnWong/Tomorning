@@ -7,9 +7,12 @@
 //
 
 #import "UIApplication+IFM.h"
-#import "WLViewController.h"
 #import <objc/runtime.h>
-#import "WLConfig.h"
+#import "FKViewController.h"
+
+@interface UIApplication (IFM) <FKViewControllerDelegate>
+
+@end
 
 @implementation UIApplication (IFM)
 
@@ -30,22 +33,40 @@
     }
 }
 
+- (UIWindow *)tweakWindow
+{
+    const void *key = @"tweakWindow";
+    UIWindow *window = objc_getAssociatedObject(self, key);
+    if (!window) {
+        window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        window.rootViewController = [self controller];
+        window.windowLevel = UIWindowLevelStatusBar + 100;
+        objc_setAssociatedObject(self, key, window, OBJC_ASSOCIATION_RETAIN);
+    }
+    return window;
+}
+
+- (UIViewController *)controller
+{
+    FKViewController *viewController = [[FKViewController alloc] init];
+    viewController.fkDelegate = self;
+    return viewController;
+}
+
 - (void)showHelper
 {
-    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
-    while (root.presentedViewController) {
-        root = root.presentedViewController;
-    }
-    if ([root isKindOfClass:[WLNavigationController class]]) {
-        return;
-    }
-    
-    int gameId = [WLConfig currentGameId];
-    if (gameId > 0) {
-        UIViewController *vc = [[WLViewController alloc] initWithGameId:gameId];
-        UIViewController *navVc = [[WLNavigationController alloc] initWithRootViewController:vc];
-        [root presentViewController:navVc animated:YES completion:nil];
-    }
+    UIWindow *window = [self tweakWindow];
+    window.rootViewController = [self controller];
+    [window makeKeyAndVisible];
+}
+
+- (void)dismiss
+{
+    UIWindow *window = [self tweakWindow];
+    [window resignKeyWindow];
+    window.hidden = YES;
+    [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
+    window.rootViewController = nil;
 }
 
 @end
