@@ -77,12 +77,12 @@
 "lL7-Z7-qCI.text" = "退出登录";
 "n3J-qi-neh.text" = "变更密码";
 "nUi-GN-jtv.text" = "综合讨论区";
-"p05-s5-Ngu.text" = "添加团队成员";
+//"p05-s5-Ngu.text" = "添加团队成员";
 "pD3-TH-bO7.text" = "变更密码";
 "qff-Pw-TbV.text" = "给我们好评";
 "rXc-wZ-rEH.text" = "欢迎来到Wonderland！在这里探索全新的世界。";
 "rfc-ZZ-D3O.text" = "新手教程";
-"rkg-pO-6Sh.text" = "请输入朋友的WID以邀请他加入游戏";
+//"rkg-pO-6Sh.text" = "请输入朋友的WID以邀请他加入游戏";
 "rr5-Rq-yPF.text" = "服务条款";
 "s1r-TX-roO.text" = "账户不公开";
 "tUk-6K-1GV.text" = "查看任务开启地点";
@@ -117,15 +117,14 @@
 "Z8A-Lz-wRo.normalTitle" = "接受";
 "dsU-dG-4Kp.normalTitle" = "使用微信登录";
 "ik4-q2-1a1.normalTitle" = "取消";
-"lQN-JB-BRm.normalTitle" = "搜索";
-"jBI-Pd-rhz.normalTitle" = "忘记密码?";
+//"lQN-JB-BRm.normalTitle" = "搜索";
 "mtc-SW-ACZ.normalTitle" = "注册";
 "mu4-Cm-hho.normalTitle" = "登录";
 "s7X-l5-uD9.normalTitle" = "取消";
 "Sct-YN-RMl.normalTitle" = "邀请";
 "NEB-Xa-gmt.normalTitle" = "取消";
 "ETx-oh-WvM.normalTitle" = "详细数据";
-"lQN-JB-BRm.disabledTitle" = "搜索";
+//"lQN-JB-BRm.disabledTitle" = "搜索";
 "B4R-4L-EeY.disabledTitle" = "已参加";
 
 //Class = "UITextField"

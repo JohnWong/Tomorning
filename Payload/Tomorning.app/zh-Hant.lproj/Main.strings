@@ -77,12 +77,12 @@
 "lL7-Z7-qCI.text" = "退出登入";
 "n3J-qi-neh.text" = "變更密碼";
 "nUi-GN-jtv.text" = "綜合討論區";
-"p05-s5-Ngu.text" = "新增團隊成員";
+//"p05-s5-Ngu.text" = "新增團隊成員";
 "pD3-TH-bO7.text" = "變更密碼";
 "qff-Pw-TbV.text" = "給我們好評";
 "rXc-wZ-rEH.text" = "歡迎來到Wonderland！在這裡探索全新的世界。";
 "rfc-ZZ-D3O.text" = "新手教學";
-"rkg-pO-6Sh.text" = "請輸入朋友的WID以邀請他加入遊戲";
+//"rkg-pO-6Sh.text" = "請輸入朋友的WID以邀請他加入遊戲";
 "rr5-Rq-yPF.text" = "服務條款";
 "s1r-TX-roO.text" = "帳戶不公開";
 "tUk-6K-1GV.text" = "查看任務開啟地點";
@@ -117,15 +117,14 @@
 "Z8A-Lz-wRo.normalTitle" = "接受";
 "dsU-dG-4Kp.normalTitle" = "使用微信登入";
 "ik4-q2-1a1.normalTitle" = "取消";
-"lQN-JB-BRm.normalTitle" = "搜索";
-"jBI-Pd-rhz.normalTitle" = "忘記密碼?";
+//"lQN-JB-BRm.normalTitle" = "搜索";
 "mtc-SW-ACZ.normalTitle" = "註冊";
 "mu4-Cm-hho.normalTitle" = "登入";
 "s7X-l5-uD9.normalTitle" = "取消";
 "Sct-YN-RMl.normalTitle" = "邀請";
 "NEB-Xa-gmt.normalTitle" = "取消";
 "ETx-oh-WvM.normalTitle" = "詳細數據";
-"lQN-JB-BRm.disabledTitle" = "搜索";
+//"lQN-JB-BRm.disabledTitle" = "搜索";
 "B4R-4L-EeY.disabledTitle" = "已參加";
 
 //Class = "UITextField"
