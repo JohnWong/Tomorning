@@ -101,6 +101,8 @@ typedef void(^WLScanResult)(NSDictionary *dict, bool b, long l);
 //        method_exchangeImplementations(m1, m2);
     }
     
+//    [[NSObject class] performSelector:@selector(WL_hookStart)];
+    
 }
 
 @end

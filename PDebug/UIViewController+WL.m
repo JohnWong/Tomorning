@@ -24,7 +24,20 @@
         [self exchangeSelector:@selector(viewDidLoad) with:@selector(TB_viewDidLoad)];
     } else if (self == NSClassFromString(@"FeaturedDetailViewController")) {
         [self exchangeSelector:@selector(viewDidLoad) with:@selector(FD_viewDidLoad)];
+    } else if (self == NSClassFromString(@"DiscoverGameViewController")) {
+        [self exchangeSelector:@selector(WL_wonderDidFetchDiscoverGameWorldItem:node:) with:@selector(wonderDidFetchDiscoverGameWorldItem:node:)];
+        [self exchangeSelector:@selector(WL_exchangeItem:) with:@selector(exchangeItem:)];
     }
+}
+
+- (void)WL_wonderDidFetchDiscoverGameWorldItem:(id)item node:(id)node
+{
+    [self WL_wonderDidFetchDiscoverGameWorldItem:item node:node];
+}
+
+- (void)WL_exchangeItem:(id)item
+{
+    [self WL_exchangeItem:item];
 }
 
 + (void)exchangeSelector:(SEL)s1 with:(SEL)s2
@@ -45,7 +58,7 @@
     [self WG_viewDidLoad];
     UIBarButtonItem *rightItem = self.navigationItem.rightBarButtonItem;
     UIBarButtonItem *hint = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(showHint)];
-    self.navigationItem.rightBarButtonItems = @[ rightItem, hint ];
+    self.navigationItem.rightBarButtonItems = rightItem ? @[ rightItem, hint ] : @[ hint ];
     
     dispatch_after(3, dispatch_get_main_queue(), ^{
         if ([WLConfig sharedInstance].isAutoMode) {

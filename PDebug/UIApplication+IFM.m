@@ -23,6 +23,7 @@
 - (void)ifm_sendEvent:(UIEvent *)event
 {
     [self ifm_sendEvent:event];
+//    NSLog(@"%@", event);
     if (event && (event.subtype == UIEventSubtypeMotionShake)) {
         if ([[event valueForKey:@"shakeState"] boolValue]) {
             [self showHelper];
