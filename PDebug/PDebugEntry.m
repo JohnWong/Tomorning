@@ -70,6 +70,10 @@ typedef void(^WLScanResult)(NSDictionary *dict, bool b, long l);
         }
         resultBlock(dict, b, l);
     };
+    
+    if ([WLConfig sharedInstance].isAutoMode) {
+        
+    }
     [self WL_scanTagWithImageData:data withResult:block];
 }
 

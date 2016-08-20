@@ -20,6 +20,8 @@
         [self exchangeSelector:@selector(viewDidLoad) with:@selector(TM_viewDidLoad)];
     } else if (self == NSClassFromString(@"WonderGameViewController")) {
         [self exchangeSelector:@selector(viewDidLoad) with:@selector(WG_viewDidLoad)];
+        [self exchangeSelector:@selector(viewDidAppear:) with:@selector(WG_viewDidAppear:)];
+        [self exchangeSelector:@selector(takePhoto:) with:@selector(WG_takePhoto:)];
     } else if (self == NSClassFromString(@"FeaturedTableViewController")) {
         [self exchangeSelector:@selector(viewDidLoad) with:@selector(TB_viewDidLoad)];
     } else if (self == NSClassFromString(@"FeaturedDetailViewController")) {
@@ -32,11 +34,13 @@
 
 - (void)WL_wonderDidFetchDiscoverGameWorldItem:(id)item node:(id)node
 {
+    // 兑换
     [self WL_wonderDidFetchDiscoverGameWorldItem:item node:node];
 }
 
 - (void)WL_exchangeItem:(id)item
 {
+    // 打开
     [self WL_exchangeItem:item];
 }
 
@@ -59,20 +63,35 @@
     UIBarButtonItem *rightItem = self.navigationItem.rightBarButtonItem;
     UIBarButtonItem *hint = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(showHint)];
     self.navigationItem.rightBarButtonItems = rightItem ? @[ rightItem, hint ] : @[ hint ];
-    
-    dispatch_after(3, dispatch_get_main_queue(), ^{
+}
+
+- (void)WG_viewDidAppear:(BOOL)animated
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
         if ([WLConfig sharedInstance].isAutoMode) {
             for (UIView *view in self.view.subviews) {
                 if ([view isKindOfClass:[UIScrollView class]]) {
                     CGFloat width = [UIScreen mainScreen].bounds.size.width;
-                    ((UIScrollView *)view).contentOffset = CGPointMake(width, 0);
-                    dispatch_after(3, dispatch_get_main_queue(), ^{
-//                        [self performSelector:@selector(takePhoto:)];
-                    });
+                    ((UIScrollView *)view).contentOffset = CGPointMake(width * 1, 0);
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [self performSelector:@selector(takePhoto:) withObject:nil];
+                    });                    
                 }
             }
         }
     });
+}
+
+- (void)WG_takePhoto:(id)sender
+{
+    [self WG_takePhoto:sender];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+{
+    NSLog(@"%@: %@", self.class, change);
 }
 
 - (void)TB_viewDidLoad
