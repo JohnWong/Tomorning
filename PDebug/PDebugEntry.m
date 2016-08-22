@@ -8,6 +8,7 @@
 
 #import "PDebugEntry.h"
 #import <objc/runtime.h>
+#import <UIKit/UIKit.h>
 #import <dlfcn.h>
 #import "fishhook.h"
 #import "CTBlockDescription.h"
@@ -47,10 +48,10 @@ typedef void(^WLScanResult)(NSDictionary *dict, bool b, long l);
         if (b) {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 NSData *scanData = [WLConfig sharedInstance].lastScanData;
+                [WLConfig sharedInstance].lastScanData = nil;
                 int gameId = [WLConfig currentGameId];
                 if (scanData.length > 0 && gameId > 0) {
-                    NSString *filePath = [WLConfig decryptedPath];
-                    filePath = [filePath stringByAppendingPathComponent:@"scan"];
+                    NSString *filePath = [WLConfig scanPath];
                     NSError *error;
                     [[NSFileManager defaultManager] createDirectoryAtPath:filePath
                                               withIntermediateDirectories:NO
@@ -67,13 +68,12 @@ typedef void(^WLScanResult)(NSDictionary *dict, bool b, long l);
                     [scanData writeToFile:filePath atomically:YES];
                 }
             });
+            if ([WLConfig sharedInstance].isAutoMode) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"didScanSuccess" object:nil];
+            }
         }
         resultBlock(dict, b, l);
     };
-    
-    if ([WLConfig sharedInstance].isAutoMode) {
-        
-    }
     [self WL_scanTagWithImageData:data withResult:block];
 }
 

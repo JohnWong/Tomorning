@@ -57,17 +57,27 @@
     [self setValue:@(YES) forKeyPath:@"mapView.showsUserLocation"];
 }
 
+static dispatch_once_t onceToken;
+
 - (void)WG_viewDidLoad
 {
     [self WG_viewDidLoad];
     UIBarButtonItem *rightItem = self.navigationItem.rightBarButtonItem;
     UIBarButtonItem *hint = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(showHint)];
     self.navigationItem.rightBarButtonItems = rightItem ? @[ rightItem, hint ] : @[ hint ];
+    onceToken = 0;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didScanSuccess) name:@"didScanSuccess" object:nil];
+}
+
+- (void)didScanSuccess
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self performSelector:@selector(tapTagButton:) withObject:nil];
+    });
 }
 
 - (void)WG_viewDidAppear:(BOOL)animated
 {
-    static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
         if ([WLConfig sharedInstance].isAutoMode) {
@@ -123,7 +133,7 @@
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
     invocation.selector = sel;
     invocation.target = self;
-    NSNumber *gameId = @(122);
+    NSNumber *gameId = @([WLConfig gameId]);
     int type = 0;
     [invocation setArgument:&gameId atIndex:2];
     [invocation setArgument:&type atIndex:3];

@@ -21,10 +21,25 @@
     return sharedInstance;
 }
 
++ (int)gameId
+{
+    return 122;
+}
+
 + (NSString *)decryptedPath
 {
+    return [self docPathWithFolder:@"decrypt"];
+}
+
++ (NSString *)scanPath
+{
+    return [self docPathWithFolder:@"scan"];
+}
+
++ (NSString *)docPathWithFolder:(NSString *)folder
+{
     NSString *docRoot = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-    NSString *decryptPath = [docRoot stringByAppendingPathComponent:@"decrypt"];
+    NSString *decryptPath = [docRoot stringByAppendingPathComponent:folder];
     NSError *error;
     [[NSFileManager defaultManager] createDirectoryAtPath:decryptPath
                               withIntermediateDirectories:NO

@@ -11,7 +11,9 @@
 @interface WLConfig : NSObject
 
 + (NSString *)decryptedPath;
++ (NSString *)scanPath;
 + (NSString *)gameResourcePath;
++ (int)gameId;
 
 + (instancetype)sharedInstance;
 
