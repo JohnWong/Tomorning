@@ -30,8 +30,8 @@
             image = fakeImage;
         }
     }
-    
-    [WLConfig sharedInstance].lastScanData = UIImageJPEGRepresentation(image, 0.8);
+
+    [WLConfig sharedInstance].lastScanData = UIImagePNGRepresentation(image);
     UIImage *ret = [self WL_scaleFromeOrignalTo480_640:image];
     return ret;
 }
