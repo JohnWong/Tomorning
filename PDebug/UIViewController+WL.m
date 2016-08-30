@@ -140,7 +140,7 @@ static dispatch_once_t onceToken;
 
 - (void)WG_viewDidAppear:(BOOL)animated
 {
-    [self WG_viewDidAppear:animated];
+//    [self WG_viewDidAppear:animated];
     
     UIBarButtonItem *rightItem = self.navigationItem.rightBarButtonItem;
     if (!rightItem) {
@@ -153,7 +153,7 @@ static dispatch_once_t onceToken;
         
         if ([WLConfig sharedInstance].isAutoMode) {
             for (UIView *view in self.view.subviews) {
-                if ([view isKindOfClass:[UIScrollView class]]) {
+                if (view.class == [UIScrollView class]) {
                     CGFloat width = [UIScreen mainScreen].bounds.size.width;
                     ((UIScrollView *)view).contentOffset = CGPointMake(width * 1, 0);
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
