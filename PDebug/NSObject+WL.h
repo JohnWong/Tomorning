@@ -10,4 +10,6 @@
 
 @interface NSObject (WL)
 
++ (void)exchangeSelector:(SEL)s1 with:(SEL)s2;
+
 @end

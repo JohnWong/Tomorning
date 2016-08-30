@@ -9,6 +9,9 @@
 #import "UIImage+WL.h"
 #import <objc/runtime.h>
 #import "WLConfig.h"
+#import "UIImage+fixOrientation.h"
+
+static inline double radians (double degrees) {return degrees * M_PI/180;}
 
 @implementation UIImage (WL)
 
@@ -30,8 +33,7 @@
             image = fakeImage;
         }
     }
-
-    [WLConfig sharedInstance].lastScanData = UIImagePNGRepresentation(image);
+    [WLConfig sharedInstance].lastScanData = UIImageJPEGRepresentation([image fixOrientation], 0.9);
     UIImage *ret = [self WL_scaleFromeOrignalTo480_640:image];
     return ret;
 }

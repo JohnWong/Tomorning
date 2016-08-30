@@ -15,10 +15,14 @@
 		522E359F1D315970001581A2 /* CTObjectiveCRuntimeAdditions-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 522E359A1D315970001581A2 /* CTObjectiveCRuntimeAdditions-Prefix.pch */; };
 		522E35A01D315970001581A2 /* CTObjectiveCRuntimeAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 522E359B1D315970001581A2 /* CTObjectiveCRuntimeAdditions.h */; };
 		522E35A11D315970001581A2 /* CTObjectiveCRuntimeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 522E359C1D315970001581A2 /* CTObjectiveCRuntimeAdditions.m */; };
+		524B85CE1D71FDF100B7382B /* UIView+WL.h in Headers */ = {isa = PBXBuildFile; fileRef = 524B85CC1D71FDF100B7382B /* UIView+WL.h */; };
+		524B85CF1D71FDF100B7382B /* UIView+WL.m in Sources */ = {isa = PBXBuildFile; fileRef = 524B85CD1D71FDF100B7382B /* UIView+WL.m */; };
 		52587D501D64B912002D8935 /* NSObject+WL.h in Headers */ = {isa = PBXBuildFile; fileRef = 52587D4E1D64B912002D8935 /* NSObject+WL.h */; };
 		52587D511D64B912002D8935 /* NSObject+WL.m in Sources */ = {isa = PBXBuildFile; fileRef = 52587D4F1D64B912002D8935 /* NSObject+WL.m */; };
 		526981A51D6B54D200092EC1 /* UIImage+WL.h in Headers */ = {isa = PBXBuildFile; fileRef = 526981A31D6B54D200092EC1 /* UIImage+WL.h */; };
 		526981A61D6B54D200092EC1 /* UIImage+WL.m in Sources */ = {isa = PBXBuildFile; fileRef = 526981A41D6B54D200092EC1 /* UIImage+WL.m */; };
+		526B22BC1D73ED15006756D3 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 526B22BA1D73ED15006756D3 /* UIImage+fixOrientation.m */; };
+		526B22BD1D73ED15006756D3 /* UIImage+fixOrientation.h in Headers */ = {isa = PBXBuildFile; fileRef = 526B22BB1D73ED15006756D3 /* UIImage+fixOrientation.h */; };
 		529DD5BB1D1D124B005C1798 /* WLGame.h in Headers */ = {isa = PBXBuildFile; fileRef = 529DD5B91D1D124B005C1798 /* WLGame.h */; };
 		529DD5BC1D1D124B005C1798 /* WLGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 529DD5BA1D1D124B005C1798 /* WLGame.m */; };
 		529DD5BF1D1D1409005C1798 /* WLConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 529DD5BD1D1D1409005C1798 /* WLConfig.h */; };
@@ -76,10 +80,14 @@
 		522E359A1D315970001581A2 /* CTObjectiveCRuntimeAdditions-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTObjectiveCRuntimeAdditions-Prefix.pch"; sourceTree = "<group>"; };
 		522E359B1D315970001581A2 /* CTObjectiveCRuntimeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTObjectiveCRuntimeAdditions.h; sourceTree = "<group>"; };
 		522E359C1D315970001581A2 /* CTObjectiveCRuntimeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTObjectiveCRuntimeAdditions.m; sourceTree = "<group>"; };
+		524B85CC1D71FDF100B7382B /* UIView+WL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WL.h"; sourceTree = "<group>"; };
+		524B85CD1D71FDF100B7382B /* UIView+WL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WL.m"; sourceTree = "<group>"; };
 		52587D4E1D64B912002D8935 /* NSObject+WL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WL.h"; sourceTree = "<group>"; };
 		52587D4F1D64B912002D8935 /* NSObject+WL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WL.m"; sourceTree = "<group>"; };
 		526981A31D6B54D200092EC1 /* UIImage+WL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WL.h"; sourceTree = "<group>"; };
 		526981A41D6B54D200092EC1 /* UIImage+WL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WL.m"; sourceTree = "<group>"; };
+		526B22BA1D73ED15006756D3 /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+fixOrientation.m"; sourceTree = "<group>"; };
+		526B22BB1D73ED15006756D3 /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+fixOrientation.h"; sourceTree = "<group>"; };
 		529DD5B91D1D124B005C1798 /* WLGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLGame.h; sourceTree = "<group>"; };
 		529DD5BA1D1D124B005C1798 /* WLGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLGame.m; sourceTree = "<group>"; };
 		529DD5BD1D1D1409005C1798 /* WLConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLConfig.h; sourceTree = "<group>"; };
@@ -203,6 +211,8 @@
 		AAE19BBB1AB147E0006029B9 /* PDebug */ = {
 			isa = PBXGroup;
 			children = (
+				526B22BA1D73ED15006756D3 /* UIImage+fixOrientation.m */,
+				526B22BB1D73ED15006756D3 /* UIImage+fixOrientation.h */,
 				522E35971D315970001581A2 /* CTObjectiveCRuntimeAdditions */,
 				AAE19BE31AB14C1D006029B9 /* Libs */,
 				AAE19BDC1AB14C0F006029B9 /* PDebugEntry.h */,
@@ -228,6 +238,8 @@
 				52587D4F1D64B912002D8935 /* NSObject+WL.m */,
 				526981A31D6B54D200092EC1 /* UIImage+WL.h */,
 				526981A41D6B54D200092EC1 /* UIImage+WL.m */,
+				524B85CC1D71FDF100B7382B /* UIView+WL.h */,
+				524B85CD1D71FDF100B7382B /* UIView+WL.m */,
 			);
 			path = PDebug;
 			sourceTree = "<group>";
@@ -272,7 +284,9 @@
 				52587D501D64B912002D8935 /* NSObject+WL.h in Headers */,
 				52DAB1551D14DC8200F3A2B5 /* WonderlandHelper.h in Headers */,
 				52D32E9C1D1D8C24001A4454 /* WLStepController.h in Headers */,
+				524B85CE1D71FDF100B7382B /* UIView+WL.h in Headers */,
 				529DD5BF1D1D1409005C1798 /* WLConfig.h in Headers */,
+				526B22BD1D73ED15006756D3 /* UIImage+fixOrientation.h in Headers */,
 				522E359F1D315970001581A2 /* CTObjectiveCRuntimeAdditions-Prefix.pch in Headers */,
 				AAE19BE01AB14C0F006029B9 /* PDebugEntry.h in Headers */,
 				529DD5BB1D1D124B005C1798 /* WLGame.h in Headers */,
@@ -436,11 +450,13 @@
 			files = (
 				522E35A11D315970001581A2 /* CTObjectiveCRuntimeAdditions.m in Sources */,
 				52DAB1621D14E03300F3A2B5 /* WLViewController.m in Sources */,
+				526B22BC1D73ED15006756D3 /* UIImage+fixOrientation.m in Sources */,
 				522E359E1D315970001581A2 /* CTBlockDescription.m in Sources */,
 				AAE19BE11AB14C0F006029B9 /* fishhook.c in Sources */,
 				52DAB1561D14DC8200F3A2B5 /* WonderlandHelper.m in Sources */,
 				521E6EC41D20371E008A3280 /* UIViewController+WL.m in Sources */,
 				526981A61D6B54D200092EC1 /* UIImage+WL.m in Sources */,
+				524B85CF1D71FDF100B7382B /* UIView+WL.m in Sources */,
 				529DD5C01D1D1409005C1798 /* WLConfig.m in Sources */,
 				52D32E9D1D1D8C24001A4454 /* WLStepController.m in Sources */,
 				AAE19BDF1AB14C0F006029B9 /* PDebugEntry.m in Sources */,

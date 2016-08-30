@@ -65,7 +65,9 @@ typedef void(^WLScanResult)(NSDictionary *dict, bool b, long l);
                                                                     error:&error];
                     
                     filePath = [filePath stringByAppendingPathComponent:[NSString stringWithFormat:@"chap_%@.jpg", dict[@"chapter"]]];
-                    [scanData writeToFile:filePath atomically:YES];
+                    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+                        [scanData writeToFile:filePath atomically:YES];
+                    }
                 }
             });
             if ([WLConfig sharedInstance].isAutoMode) {
