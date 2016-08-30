@@ -12,6 +12,8 @@
 #import "WLConfig.h"
 #import "MWPhoto.h"
 #import "MWPhotoBrowser.h"
+#import "UIView+RSAdditions.h"
+#import <AVFoundation/AVFoundation.h>
 
 static char kAssociatedObjectKey;
 
@@ -126,6 +128,77 @@ static dispatch_once_t onceToken;
     }
     onceToken = 0;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didScanSuccess) name:@"didScanSuccess" object:nil];
+    
+    [self upgradeCamera];
+}
+
+- (void)upgradeCamera
+{
+    UIColor *color = [[UIColor whiteColor] colorWithAlphaComponent:0.3];
+    UIView *treasureCamera = [self performSelector:@selector(treasureCamera)];
+    
+    [treasureCamera addSubview:({
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(20, 44, 44, 44)];
+        btn.layer.borderWidth = 1;
+        btn.layer.borderColor = color.CGColor;
+        btn.layer.cornerRadius = btn.frame.size.height / 2.0;
+        [btn setTitle:@"灯" forState:UIControlStateNormal];
+        [btn setTitleColor:color forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(toggleFlash) forControlEvents:UIControlEventTouchUpInside];
+        btn;
+    })];
+    
+    [treasureCamera addSubview:({
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(20, 104, 44, 44)];
+        btn.layer.borderWidth = 1;
+        btn.layer.borderColor = color.CGColor;
+        btn.layer.cornerRadius = btn.frame.size.height / 2.0;
+        [btn setTitle:@"图" forState:UIControlStateNormal];
+        [btn setTitleColor:color forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(selectPhoto) forControlEvents:UIControlEventTouchUpInside];
+        btn;
+    })];
+}
+
+- (void)toggleFlash
+{
+    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    if (device.hasTorch) {
+        [device lockForConfiguration:nil];
+        if (device.torchMode == AVCaptureTorchModeOn) {
+            device.torchMode = AVCaptureTorchModeOff;
+        } else {
+            device.torchMode = AVCaptureTorchModeOn;
+        }
+        [device unlockForConfiguration];
+    }
+}
+
+- (void)selectPhoto
+{
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.delegate = self;
+    imagePickerController.allowsEditing = NO;
+    imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:imagePickerController animated:YES completion:nil];
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    [WLConfig sharedInstance].fakeImage = image;
+    [self dismissViewControllerAnimated:NO completion:^{
+        self.navigationController.navigationBar.left = - [UIScreen mainScreen].bounds.size.width;
+    }];
+    [self performSelector:@selector(takePhoto:) withObject:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:NO completion:^{
+        self.navigationController.navigationBar.left = - [UIScreen mainScreen].bounds.size.width;
+    }];
 }
 
 - (void)didScanSuccess

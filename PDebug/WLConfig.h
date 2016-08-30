@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface WLConfig : NSObject
 
@@ -21,4 +22,6 @@
 
 @property (nonatomic, strong) NSData *lastScanData;
 @property (nonatomic, assign) BOOL isAutoMode;
+@property (nonatomic, strong) UIImage *fakeImage;
+
 @end

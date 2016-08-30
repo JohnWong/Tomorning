@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-@interface UIViewController (WL) <UICollectionViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface UIViewController (WL) <UICollectionViewDelegate, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate>
 
 @end
