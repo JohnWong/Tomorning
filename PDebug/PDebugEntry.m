@@ -79,11 +79,6 @@ typedef void(^WLScanResult)(NSDictionary *dict, bool b, long l);
     [self WL_scanTagWithImageData:data withResult:block];
 }
 
-- (void)toFeaturedDetailWithGameID:(id)gameId type:(int)type
-{
-    
-}
-
 +(void)load
 {
     orig_dlsym = dlsym(RTLD_DEFAULT, "dlsym");
@@ -99,15 +94,6 @@ typedef void(^WLScanResult)(NSDictionary *dict, bool b, long l);
         
         class_swizzleSelector(c, originalSelector, swizzledSelector);
     }
-    {
-        Class c = NSClassFromString(@"FeaturedTableViewController");
-        SEL sel = @selector(toFeaturedDetailWithGameID:type:);
-        Method m1 = class_getInstanceMethod(self, sel);
-        Method m2 = class_getInstanceMethod(c, sel);
-//        method_exchangeImplementations(m1, m2);
-    }
-    
-//    [[NSObject class] performSelector:@selector(WL_hookStart)];
     
 }
 

@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MWPhotoBrowser.h"
 
 @interface WLNavigationController : UINavigationController
 
 @end
 
-@interface WLViewController : UITableViewController
+@interface WLViewController : UITableViewController<MWPhotoBrowserDelegate>
 
 @property (nonatomic, assign, readonly) int gameId;
+@property (nonatomic, strong) NSMutableArray *photos;
 
 - (instancetype)initWithGameId:(int)gameId;
 
