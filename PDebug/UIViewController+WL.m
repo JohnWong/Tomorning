@@ -40,7 +40,23 @@ static char kAssociatedObjectKey;
         [self exchangeSelector:@selector(viewDidAppear:) with:@selector(TD_viewDidAppear:)];
     } else if (self == NSClassFromString(@"WonderMoreViewController")) {
         [self exchangeSelector:@selector(viewDidAppear:) with:@selector(WM_viewDidAppear:)];
+    } else if (self == NSClassFromString(@"MineViewController")) {
+        [self exchangeSelector:@selector(wonderDidFetchUserInfo:medalList:playingList:) with:@selector(MN_wonderDidFetchUserInfo:medalList:playingList:)];
     }
+}
+
+- (void)MN_wonderDidFetchUserInfo:(id)info medalList:(NSMutableArray *)medal playingList:(id)list
+{
+    // 奖章
+//    NSMutableArray *array = [NSMutableArray array];
+//    for (NSMutableArray *arr in medal) {
+//        for (id badge in arr) {
+//            [badge setValue:@(1465009546) forKey:@"badgeGetTime"];
+//            [array addObject:badge];
+//        }
+//    }
+//    medal = [NSMutableArray arrayWithObject:array];
+    [self MN_wonderDidFetchUserInfo:info medalList:medal playingList:list];
 }
 
 - (void)WM_viewDidAppear:(BOOL)animated
