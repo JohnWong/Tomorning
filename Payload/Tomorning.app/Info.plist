@@ -48,7 +48,7 @@
 	<key>DTSDKBuild</key>
 	<string>13E230</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.4.0</string>
+	<string>3.4.3 </string>
 	<key>CFBundleAllowMixedLocalizations</key>
 	<true/>
 	<key>CFBundleSupportedPlatforms</key>
@@ -74,7 +74,7 @@
 		<string>HelveticaNeue.ttc</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>110</string>
+	<string>102</string>
 	<key>FacebookAppID</key>
 	<string>1556626271327819</string>
 	<key>UILaunchImages</key>
@@ -213,7 +213,5 @@
 			</array>
 		</dict>
 	</array>
-	<key>UIFileSharingEnabled</key>
-	<true/>
 </dict>
 </plist>
