@@ -36,6 +36,8 @@ static char kAssociatedObjectKey;
     } else if (self == NSClassFromString(@"DiscoverGameViewController")) {
         [self exchangeSelector:@selector(WL_wonderDidFetchDiscoverGameWorldItem:node:) with:@selector(wonderDidFetchDiscoverGameWorldItem:node:)];
         [self exchangeSelector:@selector(WL_exchangeItem:) with:@selector(exchangeItem:)];
+        [self exchangeSelector:@selector(DG_pinch:) with:@selector(pinch:)];
+        [self exchangeSelector:@selector(DG_mapPan:) with:@selector(mapPan:)];
     } else if (self == NSClassFromString(@"TagDetailViewController")) {
         [self exchangeSelector:@selector(viewDidAppear:) with:@selector(TD_viewDidAppear:)];
     } else if (self == NSClassFromString(@"WonderMoreViewController")) {
@@ -43,6 +45,16 @@ static char kAssociatedObjectKey;
     } else if (self == NSClassFromString(@"MineViewController")) {
         [self exchangeSelector:@selector(wonderDidFetchUserInfo:medalList:playingList:) with:@selector(MN_wonderDidFetchUserInfo:medalList:playingList:)];
     }
+}
+
+- (void)DG_pinch:(UIPinchGestureRecognizer *)pinch
+{
+//    [self DG_pinch:pinch];
+}
+
+- (void)DG_mapPan:(UIPanGestureRecognizer *)pan
+{
+    
 }
 
 - (void)MN_wonderDidFetchUserInfo:(id)info medalList:(NSMutableArray *)medal playingList:(id)list
