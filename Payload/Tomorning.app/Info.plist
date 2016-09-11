@@ -48,7 +48,7 @@
 	<key>DTSDKBuild</key>
 	<string>13E230</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.4.3 </string>
+	<string>3.4.4</string>
 	<key>CFBundleAllowMixedLocalizations</key>
 	<true/>
 	<key>CFBundleSupportedPlatforms</key>

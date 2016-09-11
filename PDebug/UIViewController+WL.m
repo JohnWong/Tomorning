@@ -236,13 +236,11 @@ static dispatch_once_t onceToken;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self collectionView:[self performSelector:@selector(collectionView)] didSelectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
         });
-    });   
+    });
 }
 
 - (void)WG_viewDidAppear:(BOOL)animated
 {
-//    [self WG_viewDidAppear:animated];
-    
     UIBarButtonItem *rightItem = self.navigationItem.rightBarButtonItem;
     if (!rightItem) {
         UIBarButtonItem *hint = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(showHint)];
@@ -250,20 +248,23 @@ static dispatch_once_t onceToken;
         self.navigationItem.rightBarButtonItem = hint;
     }
     
-    dispatch_once(&onceToken, ^{
+    if ([WLConfig sharedInstance].isAutoMode) {
         
-        if ([WLConfig sharedInstance].isAutoMode) {
+        dispatch_once(&onceToken, ^{
+            
             for (UIView *view in self.view.subviews) {
                 if (view.class == [UIScrollView class]) {
                     CGFloat width = [UIScreen mainScreen].bounds.size.width;
                     ((UIScrollView *)view).contentOffset = CGPointMake(width * 1, 0);
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                         [self performSelector:@selector(takePhoto:) withObject:nil];
-                    });                    
+                    });
                 }
             }
-        }
-    });
+        });
+    } else {
+        [self WG_viewDidAppear:animated];
+    }
 }
 
 - (void)WG_takePhoto:(id)sender
