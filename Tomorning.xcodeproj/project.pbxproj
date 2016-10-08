@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0DACCC1538AAC0FC8DF40961 /* libPods-PDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C39590AFD961189D4682606 /* libPods-PDebug.a */; };
+		460B3F5FDF0995C6BD2AB5B3 /* libPods-PDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A347B02837B1A0A81BE8477 /* libPods-PDebug.a */; };
 		521E6EC31D20371E008A3280 /* UIViewController+WL.h in Headers */ = {isa = PBXBuildFile; fileRef = 521E6EC11D20371E008A3280 /* UIViewController+WL.h */; };
 		521E6EC41D20371E008A3280 /* UIViewController+WL.m in Sources */ = {isa = PBXBuildFile; fileRef = 521E6EC21D20371E008A3280 /* UIViewController+WL.m */; };
 		522E359D1D315970001581A2 /* CTBlockDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 522E35981D315970001581A2 /* CTBlockDescription.h */; };
@@ -29,6 +29,8 @@
 		529DD5C01D1D1409005C1798 /* WLConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 529DD5BE1D1D1409005C1798 /* WLConfig.m */; };
 		529DD5D11D1D61FD005C1798 /* WLChapterController.h in Headers */ = {isa = PBXBuildFile; fileRef = 529DD5CF1D1D61FD005C1798 /* WLChapterController.h */; };
 		529DD5D21D1D61FD005C1798 /* WLChapterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529DD5D01D1D61FD005C1798 /* WLChapterController.m */; };
+		52BFC6501DA8A122005E8014 /* WLImageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 52BFC64E1DA8A122005E8014 /* WLImageViewController.h */; };
+		52BFC6511DA8A122005E8014 /* WLImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BFC64F1DA8A122005E8014 /* WLImageViewController.m */; };
 		52D32E9C1D1D8C24001A4454 /* WLStepController.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D32E9A1D1D8C24001A4454 /* WLStepController.h */; };
 		52D32E9D1D1D8C24001A4454 /* WLStepController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D32E9B1D1D8C24001A4454 /* WLStepController.m */; };
 		52DAB1551D14DC8200F3A2B5 /* WonderlandHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 52DAB1531D14DC8200F3A2B5 /* WonderlandHelper.h */; };
@@ -72,6 +74,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A347B02837B1A0A81BE8477 /* libPods-PDebug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PDebug.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32A4E9D0EC5126B9CC9D0FF1 /* Pods-PDebug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDebug.release.xcconfig"; path = "Pods/Target Support Files/Pods-PDebug/Pods-PDebug.release.xcconfig"; sourceTree = "<group>"; };
 		520BBA791D535F0400407232 /* gps-hangzhou.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "gps-hangzhou.gpx"; path = "PDebug/gps-hangzhou.gpx"; sourceTree = "<group>"; };
 		521E6EC11D20371E008A3280 /* UIViewController+WL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WL.h"; sourceTree = "<group>"; };
 		521E6EC21D20371E008A3280 /* UIViewController+WL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+WL.m"; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 		522E359A1D315970001581A2 /* CTObjectiveCRuntimeAdditions-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTObjectiveCRuntimeAdditions-Prefix.pch"; sourceTree = "<group>"; };
 		522E359B1D315970001581A2 /* CTObjectiveCRuntimeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTObjectiveCRuntimeAdditions.h; sourceTree = "<group>"; };
 		522E359C1D315970001581A2 /* CTObjectiveCRuntimeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTObjectiveCRuntimeAdditions.m; sourceTree = "<group>"; };
+		524307441DA8BA2B004527F5 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "Pods/Reveal-SDK/RevealServer-2/iOS/RevealServer.framework"; sourceTree = "<group>"; };
 		524B85CC1D71FDF100B7382B /* UIView+WL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WL.h"; sourceTree = "<group>"; };
 		524B85CD1D71FDF100B7382B /* UIView+WL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WL.m"; sourceTree = "<group>"; };
 		52587D4E1D64B912002D8935 /* NSObject+WL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WL.h"; sourceTree = "<group>"; };
@@ -94,6 +99,8 @@
 		529DD5BE1D1D1409005C1798 /* WLConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLConfig.m; sourceTree = "<group>"; };
 		529DD5CF1D1D61FD005C1798 /* WLChapterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLChapterController.h; sourceTree = "<group>"; };
 		529DD5D01D1D61FD005C1798 /* WLChapterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLChapterController.m; sourceTree = "<group>"; };
+		52BFC64E1DA8A122005E8014 /* WLImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLImageViewController.h; sourceTree = "<group>"; };
+		52BFC64F1DA8A122005E8014 /* WLImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLImageViewController.m; sourceTree = "<group>"; };
 		52D32E9A1D1D8C24001A4454 /* WLStepController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLStepController.h; sourceTree = "<group>"; };
 		52D32E9B1D1D8C24001A4454 /* WLStepController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLStepController.m; sourceTree = "<group>"; };
 		52DAB1531D14DC8200F3A2B5 /* WonderlandHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WonderlandHelper.h; sourceTree = "<group>"; };
@@ -102,9 +109,6 @@
 		52DAB15C1D14DD0900F3A2B5 /* UIApplication+IFM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+IFM.m"; sourceTree = "<group>"; };
 		52DAB15F1D14E03300F3A2B5 /* WLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLViewController.h; sourceTree = "<group>"; };
 		52DAB1601D14E03300F3A2B5 /* WLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLViewController.m; sourceTree = "<group>"; };
-		6A72B3649B6D43A6C6421950 /* Pods-PDebug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDebug.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PDebug/Pods-PDebug.debug.xcconfig"; sourceTree = "<group>"; };
-		6C39590AFD961189D4682606 /* libPods-PDebug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PDebug.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DC1A082B2E3281CFE11E123 /* Pods-PDebug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDebug.release.xcconfig"; path = "Pods/Target Support Files/Pods-PDebug/Pods-PDebug.release.xcconfig"; sourceTree = "<group>"; };
 		AAE19B671AB146DE006029B9 /* Tomorning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tomorning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE19B6B1AB146DE006029B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAE19B6C1AB146DE006029B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 		AAE19BDC1AB14C0F006029B9 /* PDebugEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDebugEntry.h; sourceTree = "<group>"; };
 		AAE19BDD1AB14C0F006029B9 /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
 		AAE19BDE1AB14C0F006029B9 /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
+		FB98FF2CFF8A25EE10739BA0 /* Pods-PDebug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDebug.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PDebug/Pods-PDebug.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,22 +140,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DACCC1538AAC0FC8DF40961 /* libPods-PDebug.a in Frameworks */,
+				460B3F5FDF0995C6BD2AB5B3 /* libPods-PDebug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		36CCE08993C96740260FC982 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6A72B3649B6D43A6C6421950 /* Pods-PDebug.debug.xcconfig */,
-				6DC1A082B2E3281CFE11E123 /* Pods-PDebug.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		522E35971D315970001581A2 /* CTObjectiveCRuntimeAdditions */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +159,15 @@
 			path = CTObjectiveCRuntimeAdditions;
 			sourceTree = "<group>";
 		};
+		6CE9E97BBAA818E0747FAA82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				524307441DA8BA2B004527F5 /* RevealServer.framework */,
+				0A347B02837B1A0A81BE8477 /* libPods-PDebug.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AAE19B5E1AB146DE006029B9 = {
 			isa = PBXGroup;
 			children = (
@@ -170,8 +175,8 @@
 				AAE19B691AB146DE006029B9 /* Tomorning */,
 				AAE19BBB1AB147E0006029B9 /* PDebug */,
 				AAE19B681AB146DE006029B9 /* Products */,
-				36CCE08993C96740260FC982 /* Pods */,
-				F01D4252DD44B0EDA0B77036 /* Frameworks */,
+				E27DEC747DCA9FE78AD0C7A9 /* Pods */,
+				6CE9E97BBAA818E0747FAA82 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,6 +245,8 @@
 				526981A41D6B54D200092EC1 /* UIImage+WL.m */,
 				524B85CC1D71FDF100B7382B /* UIView+WL.h */,
 				524B85CD1D71FDF100B7382B /* UIView+WL.m */,
+				52BFC64E1DA8A122005E8014 /* WLImageViewController.h */,
+				52BFC64F1DA8A122005E8014 /* WLImageViewController.m */,
 			);
 			path = PDebug;
 			sourceTree = "<group>";
@@ -261,12 +268,13 @@
 			name = Libs;
 			sourceTree = "<group>";
 		};
-		F01D4252DD44B0EDA0B77036 /* Frameworks */ = {
+		E27DEC747DCA9FE78AD0C7A9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6C39590AFD961189D4682606 /* libPods-PDebug.a */,
+				FB98FF2CFF8A25EE10739BA0 /* Pods-PDebug.debug.xcconfig */,
+				32A4E9D0EC5126B9CC9D0FF1 /* Pods-PDebug.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +300,7 @@
 				529DD5BB1D1D124B005C1798 /* WLGame.h in Headers */,
 				52DAB15D1D14DD0900F3A2B5 /* UIApplication+IFM.h in Headers */,
 				521E6EC31D20371E008A3280 /* UIViewController+WL.h in Headers */,
+				52BFC6501DA8A122005E8014 /* WLImageViewController.h in Headers */,
 				AAE19BE21AB14C0F006029B9 /* fishhook.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,12 +331,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAE19BD31AB147E0006029B9 /* Build configuration list for PBXNativeTarget "PDebug" */;
 			buildPhases = (
-				3E035B6D986C4FDB77C7DEFD /* Check Pods Manifest.lock */,
+				EA4D2E222D980A75AE788819 /* Check Pods Manifest.lock */,
 				AAE19BB51AB147E0006029B9 /* Sources */,
 				AAE19BB61AB147E0006029B9 /* Frameworks */,
 				AAE19BB71AB147E0006029B9 /* Headers */,
 				AAE19BB81AB147E0006029B9 /* Resources */,
-				8CB21EA2A1B624C211EA8178 /* Copy Pods Resources */,
+				D6C483BF041E91AFA53FE6C7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -386,22 +395,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3E035B6D986C4FDB77C7DEFD /* Check Pods Manifest.lock */ = {
+		AAE19BDA1AB148B2006029B9 /* Fake Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "Fake Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "rm -rf $CODESIGNING_FOLDER_PATH\ncp -av $SRCROOT/Payload/$FULL_PRODUCT_NAME $CODESIGNING_FOLDER_PATH\nrm -f $CODESIGNING_FOLDER_PATH/embedded.mobileprovision\n$SRCROOT/Scripts/optool install -t $CODESIGNING_FOLDER_PATH/$EXECUTABLE_NAME -p \"@executable_path/Frameworks/PDebug.framework/PDebug\"\nchmod +x $CODESIGNING_FOLDER_PATH/$EXECUTABLE_NAME\nexit 0";
 			showEnvVarsInLog = 0;
 		};
-		8CB21EA2A1B624C211EA8178 /* Copy Pods Resources */ = {
+		D6C483BF041E91AFA53FE6C7 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -416,19 +425,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PDebug/Pods-PDebug-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AAE19BDA1AB148B2006029B9 /* Fake Script */ = {
+		EA4D2E222D980A75AE788819 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Fake Script";
+			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rm -rf $CODESIGNING_FOLDER_PATH\ncp -av $SRCROOT/Payload/$FULL_PRODUCT_NAME $CODESIGNING_FOLDER_PATH\nrm -f $CODESIGNING_FOLDER_PATH/embedded.mobileprovision\n$SRCROOT/Scripts/optool install -t $CODESIGNING_FOLDER_PATH/$EXECUTABLE_NAME -p \"@executable_path/Frameworks/PDebug.framework/PDebug\"\nchmod +x $CODESIGNING_FOLDER_PATH/$EXECUTABLE_NAME\nexit 0";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -454,6 +463,7 @@
 				522E359E1D315970001581A2 /* CTBlockDescription.m in Sources */,
 				AAE19BE11AB14C0F006029B9 /* fishhook.c in Sources */,
 				52DAB1561D14DC8200F3A2B5 /* WonderlandHelper.m in Sources */,
+				52BFC6511DA8A122005E8014 /* WLImageViewController.m in Sources */,
 				521E6EC41D20371E008A3280 /* UIViewController+WL.m in Sources */,
 				526981A61D6B54D200092EC1 /* UIImage+WL.m in Sources */,
 				524B85CF1D71FDF100B7382B /* UIView+WL.m in Sources */,
@@ -581,8 +591,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Reveal-SDK/RevealServer-2/iOS",
+				);
 				INFOPLIST_FILE = Tomorning/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.tomorning.wonderland.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -595,8 +609,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Reveal-SDK/RevealServer-2/iOS",
+				);
 				INFOPLIST_FILE = Tomorning/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.tomorning.wonderland.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -605,7 +623,7 @@
 		};
 		AAE19BD41AB147E0006029B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A72B3649B6D43A6C6421950 /* Pods-PDebug.debug.xcconfig */;
+			baseConfigurationReference = FB98FF2CFF8A25EE10739BA0 /* Pods-PDebug.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = arm64;
 				CURRENT_PROJECT_VERSION = 1;
@@ -617,6 +635,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/frameworks",
+					"$(PROJECT_DIR)/Pods/Reveal-SDK/RevealServer-2/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -636,7 +655,7 @@
 		};
 		AAE19BD51AB147E0006029B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DC1A082B2E3281CFE11E123 /* Pods-PDebug.release.xcconfig */;
+			baseConfigurationReference = 32A4E9D0EC5126B9CC9D0FF1 /* Pods-PDebug.release.xcconfig */;
 			buildSettings = {
 				ARCHS = arm64;
 				CURRENT_PROJECT_VERSION = 1;
@@ -648,6 +667,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/frameworks",
+					"$(PROJECT_DIR)/Pods/Reveal-SDK/RevealServer-2/iOS",
 				);
 				INFOPLIST_FILE = PDebug/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

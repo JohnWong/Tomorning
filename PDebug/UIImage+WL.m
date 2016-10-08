@@ -33,7 +33,9 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
             image = fakeImage;
         }
     } else if ([WLConfig sharedInstance].fakeImage) {
+        // fake数据扫描之后清理掉
         image = [WLConfig sharedInstance].fakeImage;
+        [WLConfig sharedInstance].fakeImage = nil;
     } else {
         [WLConfig sharedInstance].lastScanData = UIImageJPEGRepresentation([image fixOrientation], 0.9);
     }

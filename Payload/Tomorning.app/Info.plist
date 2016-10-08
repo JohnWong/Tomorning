@@ -6,18 +6,57 @@
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>DTCompiler</key>
-	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>weibo</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wb2673070194</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>weixin</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wxd7a16dec9e7cbcaa</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>tencent</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>tencent1104495469</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1556626271327819</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>DTPlatformVersion</key>
-	<string>9.3</string>
+	<string>10.0</string>
 	<key>DTSDKName</key>
-	<string>iphoneos9.3</string>
+	<string>iphoneos10.0</string>
 	<key>CFBundleName</key>
 	<string>Tomorning</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>此 App 需要您的同意才能读取媒体资料库</string>
 	<key>CFBundleIcons</key>
 	<dict>
 		<key>CFBundlePrimaryIcon</key>
@@ -30,6 +69,8 @@
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>CFBundleDisplayName</key>
+	<string>Wonderland</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>mqqopensdkapiV2</string>
@@ -46,9 +87,11 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>DTSDKBuild</key>
-	<string>13E230</string>
+	<string>14A345</string>
+	<key>NSCameraUsageDescription</key>
+	<string>此 App 需要您的同意才能使用摄像头</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.4.4</string>
+	<string>3.4.6</string>
 	<key>CFBundleAllowMixedLocalizations</key>
 	<true/>
 	<key>CFBundleSupportedPlatforms</key>
@@ -60,21 +103,21 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>BuildMachineOSBuild</key>
-	<string>15G31</string>
+	<string>16A323</string>
 	<key>DTPlatformBuild</key>
-	<string>13E230</string>
+	<string>14A345</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>MinimumOSVersion</key>
-	<string>7.0</string>
+	<string>8.0</string>
 	<key>DTXcodeBuild</key>
-	<string>7D1014</string>
+	<string>8A218a</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>HelveticaNeue.ttc</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>102</string>
+	<string>103</string>
 	<key>FacebookAppID</key>
 	<string>1556626271327819</string>
 	<key>UILaunchImages</key>
@@ -136,7 +179,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>me.tomorning.wonderland.1</string>
 	<key>DTXcode</key>
-	<string>0731</string>
+	<string>0800</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -166,6 +209,8 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>此 App 需要您的同意才能获取健康信息</string>
 	<key>CFBundleExecutable</key>
 	<string>Tomorning</string>
 	<key>UIMainStoryboardFile</key>
@@ -174,45 +219,10 @@
 	<string>????</string>
 	<key>DTPlatformName</key>
 	<string>iphoneos</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>weibo</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>wb2673070194</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>weixin</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>wxd7a16dec9e7cbcaa</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>tencent</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>tencent1104495469</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb1556626271327819</string>
-			</array>
-		</dict>
-	</array>
+	<key>NSHealthShareUsageDescription</key>
+	<string>此 App 需要您的同意才能获取健康信息</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>UIFileSharingEnabled</key>
 	<true/>
 </dict>
