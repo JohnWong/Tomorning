@@ -48,9 +48,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>DTPlatformVersion</key>
-	<string>10.0</string>
+	<string>10.1</string>
 	<key>DTSDKName</key>
-	<string>iphoneos10.0</string>
+	<string>iphoneos10.1</string>
 	<key>CFBundleName</key>
 	<string>Tomorning</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
@@ -87,11 +87,11 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>DTSDKBuild</key>
-	<string>14A345</string>
+	<string>14B72</string>
 	<key>NSCameraUsageDescription</key>
 	<string>此 App 需要您的同意才能使用摄像头</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.4.10</string>
+	<string>3.5.1</string>
 	<key>CFBundleAllowMixedLocalizations</key>
 	<true/>
 	<key>CFBundleSupportedPlatforms</key>
@@ -103,21 +103,21 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>BuildMachineOSBuild</key>
-	<string>16A323</string>
+	<string>16B2555</string>
 	<key>DTPlatformBuild</key>
-	<string>14A345</string>
+	<string>14B72</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>DTXcodeBuild</key>
-	<string>8A218a</string>
+	<string>8B62</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>HelveticaNeue.ttc</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>100</string>
+	<string>101</string>
 	<key>FacebookAppID</key>
 	<string>1556626271327819</string>
 	<key>UILaunchImages</key>
@@ -179,7 +179,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>me.tomorning.wonderland.1</string>
 	<key>DTXcode</key>
-	<string>0800</string>
+	<string>0810</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
