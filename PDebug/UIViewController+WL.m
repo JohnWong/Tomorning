@@ -155,7 +155,9 @@ static dispatch_once_t onceToken;
         self.navigationItem.rightBarButtonItem = hint;
     }
     onceToken = 0;
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didScanSuccess) name:@"didScanSuccess" object:nil];
+    if ([WLConfig sharedInstance].isAutoMode) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didScanSuccess) name:@"didScanSuccess" object:nil];
+    }
     
     [self upgradeCamera];
 }
@@ -232,6 +234,7 @@ static dispatch_once_t onceToken;
 - (void)didScanSuccess
 {
     dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
         [self performSelector:@selector(tapTagButton:) withObject:nil];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self collectionView:[self performSelector:@selector(collectionView)] didSelectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
